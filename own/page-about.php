@@ -31,7 +31,7 @@ get_header(); ?>
       <div class="about-profile reveal">
 
         <div class="about-profile__img">
-          <img src="http://own.local/wp-content/uploads/2026/05/ChatGPT-Image-2026年5月10日-19_51_39.png" alt="プロフィール写真" style="width:100%;height:100%;object-fit:cover;">
+          <img src="https://ownweb.jp/wp-content/uploads/2026/05/ChatGPT-Image-2026年5月10日-19_51_39.png" alt="プロフィール写真" style="width:100%;height:100%;object-fit:cover;">
         </div>
 
         <div>

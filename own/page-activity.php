@@ -48,7 +48,7 @@ get_header(); ?>
         </div>
 
         <div class="activity-img" style="min-height:320px;">
-          <img src="http://own.local/wp-content/uploads/2026/05/FireShot-Capture-030-保護猫Ohana-ohana-hogoneko.jp_-scaled.png" alt="保護猫活動の様子" style="width:100%;height:100%;object-fit:cover;">
+          <img src="https://ownweb.jp/wp-content/uploads/2026/05/FireShot-Capture-030-保護猫Ohana-ohana-hogoneko.jp_-scaled.png" alt="保護猫活動の様子" style="width:100%;height:100%;object-fit:cover;">
         </div>
 
       </div>
