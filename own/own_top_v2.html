@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>own. | 鳥取のホームページ制作・SEO対策</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #ffffff;
+    --ink: #1a1a1a;
+    --accent: #3DD68C;
+    --accent-dark: #22a865;
+    --accent-light: #e8faf2;
+    --surface: #f4f4f0;
+    --muted: #888888;
+    --border: #ebebeb;
+    --font-en: 'Syne', sans-serif;
+    --font-ja: 'Noto Sans JP', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--font-ja);
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== CURSOR ===== */
+  .cursor {
+    position: fixed;
+    width: 10px; height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background 0.3s;
+    mix-blend-mode: normal;
+  }
+
+  .cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out, width 0.3s, height 0.3s, opacity 0.3s;
+    opacity: 0.5;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    cursor: none;
+  }
+
+  .logo-dot { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--font-en);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    cursor: none;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  .nav-cta {
+    font-family: var(--font-en);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.65rem 1.5rem;
+    background: var(--ink);
+    color: var(--white);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    cursor: none;
+  }
+
+  .nav-cta:hover { background: var(--accent); color: var(--accent-dark); }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 3rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-en);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px; height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-title {
+    font-family: var(--font-ja);
+    font-size: clamp(2.4rem, 4.5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero-title-en {
+    font-family: var(--font-en);
+    font-size: clamp(2.4rem, 4.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.5s forwards;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-en);
+    font-size: 0.85rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.9;
+    max-width: 400px;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.7s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.9s forwards;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem 2.5rem;
+    background: var(--ink);
+    color: var(--white);
+    font-family: var(--font-en);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    cursor: none;
+  }
+
+  .btn-primary:hover { background: var(--accent); color: var(--accent-dark); }
+
+  .btn-primary svg { transition: transform 0.2s; }
+  .btn-primary:hover svg { transform: translateX(4px); }
+
+  .btn-ghost {
+    font-family: var(--font-en);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+    cursor: none;
+  }
+
+  .btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
+
+  /* ===== HERO RIGHT ===== */
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    border-left: 1px solid var(--border);
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 1s 0.5s forwards;
+  }
+
+  .grid-canvas {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 1px;
+    background: #111;
+  }
+
+  .grid-cell {
+    background: #1a1a1a;
+    transition: background 0.4s;
+  }
+
+  .hero-right-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2.5rem;
+  }
+
+  .hero-logo-big {
+    font-family: var(--font-en);
+    font-size: clamp(5rem, 12vw, 10rem);
+    font-weight: 800;
+    color: rgba(255,255,255,0.08);
+    letter-spacing: -0.05em;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .hero-logo-big span { color: var(--accent); opacity: 0.3; }
+
+  .hero-right-label {
+    font-family: var(--font-en);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-top: 1rem;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-en);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    z-index: 10;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scrollDown 1.5s ease-in-out infinite;
+  }
+
+  @keyframes scrollDown {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ===== MARQUEE ===== */
+  .marquee-section {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .marquee-track {
+    display: flex;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-right: 3rem;
+    font-family: var(--font-en);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+
+  .marquee-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ===== TROUBLE ===== */
+  .trouble {
+    padding: 6rem 3rem;
+    background: var(--surface);
+  }
+
+  .section-num {
+    font-family: var(--font-en);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: var(--font-ja);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-bottom: 3rem;
+  }
+
+  .trouble-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .trouble-item {
+    background: var(--white);
+    padding: 2rem 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    transition: background 0.2s;
+  }
+
+  .trouble-item:hover { background: var(--accent-light); }
+
+  .trouble-num {
+    font-family: var(--font-en);
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+
+  .trouble-text {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* ===== SERVICES ===== */
+  .services {
+    padding: 6rem 3rem;
+  }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+  }
+
+  .section-link {
+    font-family: var(--font-en);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+    cursor: none;
+  }
+
+  .section-link:hover { color: var(--ink); border-color: var(--ink); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    transition: background 0.2s;
+    cursor: none;
+  }
+
+  .service-card:hover { background: var(--surface); }
+  .service-card:hover .service-num-label { color: var(--accent); }
+
+  .service-num-label {
+    font-family: var(--font-en);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    transition: color 0.2s;
+  }
+
+  .service-name {
+    font-family: var(--font-ja);
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .service-desc {
+    font-size: 0.83rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-price {
+    font-family: var(--font-en);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    letter-spacing: 0.05em;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+  }
+
+  /* ===== REASONS ===== */
+  .reasons {
+    padding: 6rem 3rem;
+    background: var(--ink);
+    color: var(--white);
+  }
+
+  .reasons .section-title { color: var(--white); }
+
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-top: 3rem;
+  }
+
+  .reason-item {
+    padding: 2.5rem;
+    background: var(--ink);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .reason-item:hover { background: #222; }
+
+  .reason-num {
+    font-family: var(--font-en);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    flex-shrink: 0;
+    letter-spacing: -0.04em;
+  }
+
+  .reason-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+  }
+
+  .reason-desc {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.8;
+  }
+
+  /* ===== PROCESS ===== */
+  .process {
+    padding: 6rem 3rem;
+    background: var(--surface);
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 3rem;
+  }
+
+  .process-step {
+    background: var(--white);
+    padding: 2rem 1.5rem;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: var(--font-en);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .step-title {
+    font-family: var(--font-ja);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .step-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* ===== BLOG ===== */
+  .blog {
+    padding: 6rem 3rem;
+  }
+
+  .blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .blog-card {
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: border-color 0.2s;
+    cursor: none;
+  }
+
+  .blog-card:hover { border-color: var(--accent); }
+
+  .blog-thumb {
+    height: 160px;
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-en);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .blog-body { padding: 1.25rem; }
+
+  .blog-cat {
+    display: inline-block;
+    font-family: var(--font-en);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    background: var(--accent-light);
+    color: var(--accent-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .blog-title {
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .blog-date {
+    font-family: var(--font-en);
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== CTA ===== */
+  .cta {
+    padding: 8rem 3rem;
+    text-align: center;
+    background: #111;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-en);
+    font-size: 20vw;
+    font-weight: 800;
+    color: rgba(255,255,255,0.03);
+    letter-spacing: -0.05em;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+  }
+
+  .cta-label {
+    font-family: var(--font-en);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-title {
+    font-family: var(--font-en);
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-sub {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 3rem;
+    line-height: 1.9;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1.1rem 3rem;
+    background: var(--accent);
+    color: var(--accent-dark);
+    font-family: var(--font-en);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+    position: relative;
+    z-index: 1;
+    cursor: none;
+  }
+
+  .cta-btn:hover { background: var(--white); color: var(--ink); }
+  .cta-btn svg { transition: transform 0.2s; }
+  .cta-btn:hover svg { transform: translateX(4px); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 2rem 3rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+  }
+
+  .footer-logo {
+    font-family: var(--font-en);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--muted);
+    letter-spacing: -0.03em;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-family: var(--font-en);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    cursor: none;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  .footer-copy {
+    font-family: var(--font-en);
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  /* ===== REVEAL ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 5rem 1.5rem 3rem; }
+    .hero-right { display: none; }
+    .trouble, .services, .reasons, .process, .blog, .cta { padding: 4rem 1.5rem; }
+    .trouble-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .reasons-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+    .footer-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">own<span class="logo-dot">.</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Service</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">無料相談</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Web Design & SEO — Tottori</p>
+    <h1 class="hero-title">あなたのビジネスを、<br>必要な人に届ける。</h1>
+    <span class="hero-title-en">own.</span>
+    <p class="hero-subtitle">鳥取のホームページ制作・SEO対策</p>
+    <p class="hero-desc">
+      誰もが持っている、自分だけの価値がある。<br>
+      Web制作からSEO・MEO・保守まで、<br>ひとりが一貫してサポートします。
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        無料相談する
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+      <a href="#services" class="btn-ghost">サービスを見る</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="grid-canvas" id="gridCanvas"></div>
+    <div class="hero-right-content">
+      <div class="hero-logo-big">own<span>.</span></div>
+      <p class="hero-right-label">Web & SEO — Tottori</p>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="marquee-item">
+      <span class="marquee-dot"></span><span>ホームページ制作</span>
+      <span class="marquee-dot"></span><span>SEO対策</span>
+      <span class="marquee-dot"></span><span>MEO対策</span>
+      <span class="marquee-dot"></span><span>サイト保守</span>
+      <span class="marquee-dot"></span><span>コンテンツ制作</span>
+      <span class="marquee-dot"></span><span>集客改善</span>
+      <span class="marquee-dot"></span><span>WordPress</span>
+      <span class="marquee-dot"></span><span>鳥取・米子・倉吉</span>
+      <span class="marquee-dot"></span><span>ホームページ制作</span>
+      <span class="marquee-dot"></span><span>SEO対策</span>
+      <span class="marquee-dot"></span><span>MEO対策</span>
+      <span class="marquee-dot"></span><span>サイト保守</span>
+      <span class="marquee-dot"></span><span>コンテンツ制作</span>
+      <span class="marquee-dot"></span><span>集客改善</span>
+      <span class="marquee-dot"></span><span>WordPress</span>
+      <span class="marquee-dot"></span><span>鳥取・米子・倉吉</span>
+    </div>
+  </div>
+</div>
+
+<!-- TROUBLE -->
+<section class="trouble">
+  <p class="section-num">— 01 / Trouble</p>
+  <h2 style="font-family:var(--font-en);font-size:1rem;font-weight:600;letter-spacing:0.05em;color:var(--muted);margin-bottom:0.5rem;">Any of these sound familiar?</h2>
+  <p style="font-family:var(--font-ja);font-size:clamp(2rem,4vw,3rem);font-weight:500;color:var(--ink);line-height:1.2;margin-bottom:3rem;">こんなお悩みありませんか？</p>
+  <div class="trouble-grid">
+    <div class="trouble-item reveal">
+      <span class="trouble-num">01</span>
+      <p class="trouble-text">「Googleで自分のお店が出てこない」</p>
+    </div>
+    <div class="trouble-item reveal" style="transition-delay:0.1s">
+      <span class="trouble-num">02</span>
+      <p class="trouble-text">「ホームページはあるけど何をすればいいかわからない」</p>
+    </div>
+    <div class="trouble-item reveal" style="transition-delay:0.2s">
+      <span class="trouble-num">03</span>
+      <p class="trouble-text">「プロフィール文だけちょっと直したい」</p>
+    </div>
+    <div class="trouble-item reveal" style="transition-delay:0.3s">
+      <span class="trouble-num">04</span>
+      <p class="trouble-text">「Web周りの管理を誰かに任せたい」</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <p class="section-num">— 02 / Services</p>
+      <h2 style="font-family:var(--font-en);font-size:1rem;font-weight:600;letter-spacing:0.05em;color:var(--muted);margin-bottom:0.5rem;">What We Do</h2>
+      <p style="font-family:var(--font-ja);font-size:clamp(2rem,4vw,3rem);font-weight:500;color:var(--ink);line-height:1.2;margin-bottom:0;">提供サービス</p>
+    </div>
+    <a href="#" class="section-link">
+      すべて見る
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </a>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div style="width:40px;height:40px;margin-bottom:1.25rem;">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="8" width="32" height="22" rx="2" stroke="#1a1a1a" stroke-width="1.5"/>
+          <path d="M14 34h12M20 30v4" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="service-num-label">01</p>
+      <p class="service-name">Web制作</p>
+      <p class="service-desc">集客できるWordPressサイトをSEO設計込みで制作。作って終わりじゃなく、育てるサイトを。</p>
+      <p class="service-price">30万円〜</p>
+    </div>
+    <div class="service-card reveal" style="transition-delay:0.1s">
+      <div style="width:40px;height:40px;margin-bottom:1.25rem;">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="11" stroke="#1a1a1a" stroke-width="1.5"/>
+          <path d="M26 26l6 6" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="service-num-label">02</p>
+      <p class="service-name">SEO対策</p>
+      <p class="service-desc">サイト診断から月次レポート・改善提案まで。Googleで上位に出るための仕組みをつくる。</p>
+      <p class="service-price">5万円〜 / 月</p>
+    </div>
+    <div class="service-card reveal" style="transition-delay:0.2s">
+      <div style="width:40px;height:40px;margin-bottom:1.25rem;">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 8C14 8 9 13 9 19c0 4 2 7.5 5 9.5V32h12v-3.5c3-2 5-5.5 5-9.5 0-6-5-11-11-11z" stroke="#1a1a1a" stroke-width="1.5"/>
+          <path d="M14 32h12" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="service-num-label">03</p>
+      <p class="service-name">MEO対策</p>
+      <p class="service-desc">Googleマップで地域のお客さんに見つけてもらう。地元密着の集客をサポート。</p>
+      <p class="service-price">5万円〜</p>
+    </div>
+    <div class="service-card reveal" style="transition-delay:0.3s">
+      <div style="width:40px;height:40px;margin-bottom:1.25rem;">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 6L8 12v10c0 7 5.5 13 12 14 6.5-1 12-7 12-14V12L20 6z" stroke="#1a1a1a" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M14 20l4 4 8-8" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <p class="service-num-label">04</p>
+      <p class="service-name">保守・顧問</p>
+      <p class="service-desc">サイトの管理・更新・セキュリティ対策まで。困ったときに頼れる存在として。</p>
+      <p class="service-price">3万円 / 月</p>
+    </div>
+    <div class="service-card reveal" style="transition-delay:0.4s">
+      <div style="width:40px;height:40px;margin-bottom:1.25rem;">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 10h24M8 16h18M8 22h20M8 28h14" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="service-num-label">05</p>
+      <p class="service-name">コンテンツ制作</p>
+      <p class="service-desc">SEOに強いブログ記事の構成から執筆まで。検索で見つけてもらえるコンテンツを。</p>
+      <p class="service-price">2万円 / 本</p>
+    </div>
+    <div class="service-card reveal" style="transition-delay:0.5s">
+      <div style="width:40px;height:40px;margin-bottom:1.25rem;">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 12h24v18H8z" rx="2" stroke="#1a1a1a" stroke-width="1.5"/>
+          <path d="M14 20h12M14 25h8" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M20 8v4" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="service-num-label">06</p>
+      <p class="service-name">お気軽相談</p>
+      <p class="service-desc">「Googleで出てこない」「ちょっとだけ直したい」そんな小さなお悩みからどうぞ。</p>
+      <p class="service-price">まずは無料相談</p>
+    </div>
+  </div>
+</section>
+
+<!-- REASONS -->
+<section class="reasons">
+  <p class="section-num" style="color:var(--accent);">— 03 / Why own.</p>
+  <h2 style="font-family:var(--font-en);font-size:1rem;font-weight:600;letter-spacing:0.05em;color:var(--muted);margin-bottom:0.5rem;">Why Choose Us</h2>
+  <p style="font-family:var(--font-ja);font-size:clamp(2rem,4vw,3rem);font-weight:500;color:var(--ink);line-height:1.2;margin-bottom:3rem;">選ばれる理由</p>
+  <div class="reasons-grid">
+    <div class="reason-item reveal">
+      <span class="reason-num">01</span>
+      <div>
+        <p class="reason-title">鳥取在住だからすぐ会える</p>
+        <p class="reason-desc">地元在住だから話しかけやすく、対面での打ち合わせにも対応。顔の見える関係でサポートします。</p>
+      </div>
+    </div>
+    <div class="reason-item reveal" style="transition-delay:0.1s">
+      <span class="reason-num">02</span>
+      <div>
+        <p class="reason-title">作って終わりじゃない</p>
+        <p class="reason-desc">公開後もSEO・MEO・保守まで一貫してサポート。育てるサイトを一緒に作ります。</p>
+      </div>
+    </div>
+    <div class="reason-item reveal" style="transition-delay:0.2s">
+      <span class="reason-num">03</span>
+      <div>
+        <p class="reason-title">担当者がずっと同じ</p>
+        <p class="reason-desc">窓口はひとつ。担当者が変わらないから、毎回説明し直す必要がありません。</p>
+      </div>
+    </div>
+    <div class="reason-item reveal" style="transition-delay:0.3s">
+      <span class="reason-num">04</span>
+      <div>
+        <p class="reason-title">小さな悩みから大きな案件まで</p>
+        <p class="reason-desc">「ちょっと聞きたいだけ」でも大丈夫。どんな規模のご相談もお気軽にどうぞ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <p class="section-num">— 04 / Process</p>
+  <h2 style="font-family:var(--font-en);font-size:1rem;font-weight:600;letter-spacing:0.05em;color:var(--muted);margin-bottom:0.5rem;">How It Works</h2>
+  <p style="font-family:var(--font-ja);font-size:clamp(2rem,4vw,3rem);font-weight:500;color:var(--ink);line-height:1.2;margin-bottom:3rem;">進め方</p>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <p class="step-num">Step 01</p>
+      <h3 class="step-title">ヒアリング・<br>現状確認</h3>
+      <p class="step-desc">事業の課題・目標・現状をヒアリング。どんな些細な悩みでもお聞きします。</p>
+    </div>
+    <div class="process-step reveal" style="transition-delay:0.1s">
+      <p class="step-num">Step 02</p>
+      <h3 class="step-title">戦略策定・<br>提案</h3>
+      <p class="step-desc">サイト構成・キーワード・デザインの方向性をまとめてご提案します。</p>
+    </div>
+    <div class="process-step reveal" style="transition-delay:0.2s">
+      <p class="step-num">Step 03</p>
+      <h3 class="step-title">制作・<br>実装</h3>
+      <p class="step-desc">デザイン・開発・SEO施策を並行して進め、スピーディーに納品します。</p>
+    </div>
+    <div class="process-step reveal" style="transition-delay:0.3s">
+      <p class="step-num">Step 04</p>
+      <h3 class="step-title">公開後の<br>継続サポート</h3>
+      <p class="step-desc">公開後もデータを見ながら継続改善。成果が出るまでしっかり伴走します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="blog-header">
+    <div>
+      <p class="section-num">— 05 / Blog</p>
+      <h2 style="font-family:var(--font-en);font-size:1rem;font-weight:600;letter-spacing:0.05em;color:var(--muted);margin-bottom:0.5rem;">Latest Insights</h2>
+      <p style="font-family:var(--font-ja);font-size:clamp(2rem,4vw,3rem);font-weight:500;color:var(--ink);line-height:1.2;margin-bottom:0;">最新のブログ記事</p>
+    </div>
+    <a href="#" class="section-link">
+      すべて見る
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </a>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card reveal">
+      <div class="blog-thumb">Thumbnail</div>
+      <div class="blog-body">
+        <span class="blog-cat">SEO対策</span>
+        <p class="blog-title">鳥取の飲食店がGoogleマップで上位に出るための5つのポイント</p>
+        <p class="blog-date">2025.01.01</p>
+      </div>
+    </div>
+    <div class="blog-card reveal" style="transition-delay:0.1s">
+      <div class="blog-thumb">Thumbnail</div>
+      <div class="blog-body">
+        <span class="blog-cat">Web制作</span>
+        <p class="blog-title">ホームページを作ったあとに必ずやること・初心者向けチェックリスト</p>
+        <p class="blog-date">2025.01.01</p>
+      </div>
+    </div>
+    <div class="blog-card reveal" style="transition-delay:0.2s">
+      <div class="blog-thumb">Thumbnail</div>
+      <div class="blog-body">
+        <span class="blog-cat">MEO対策</span>
+        <p class="blog-title">Googleビジネスプロフィールの登録方法と最適化のコツ</p>
+        <p class="blog-date">2025.01.01</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="cta-bg">own.</div>
+  <p class="cta-label">Contact</p>
+  <h2 class="cta-title">Let's Work<br>Together.</h2>
+  <p class="cta-sub">
+    Webサイトのご相談、SEO改善のご依頼など、お気軽にお問い合わせください。<br>
+    個人の方も大歓迎。初回相談は無料です。
+  </p>
+  <a href="#" class="cta-btn">
+    無料相談をする →
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">own.</span>
+  <ul class="footer-links">
+    <li><a href="#">Service</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 Own. All rights reserved.</p>
+</footer>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  (function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animateRing);
+  })();
+
+  const gridCanvas = document.getElementById('gridCanvas');
+  const cells = [];
+  for (let i = 0; i < 48; i++) {
+    const cell = document.createElement('div');
+    cell.className = 'grid-cell';
+    gridCanvas.appendChild(cell);
+    cells.push(cell);
+  }
+
+  function flashCell() {
+    const idx = Math.floor(Math.random() * cells.length);
+    const shade = Math.random() > 0.7
+      ? '#3DD68C'
+      : `rgba(61,214,140,${Math.random() * 0.08})`;
+    cells[idx].style.background = shade;
+    setTimeout(() => { cells[idx].style.background = '#1a1a1a'; }, 400 + Math.random() * 600);
+    setTimeout(flashCell, 80 + Math.random() * 200);
+  }
+  flashCell();
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#FFFFFF"/>
+
+  <!-- Header bar -->
+  <rect width="1200" height="72" fill="#FFFFFF"/>
+  <line x1="0" y1="72" x2="1200" y2="72" stroke="#E8E8E4" stroke-width="1"/>
+
+  <!-- Logo -->
+  <text x="48" y="44" font-family="sans-serif" font-weight="700" font-size="22" fill="#1A1A1A" letter-spacing="-1">Own</text>
+  <text x="96" y="44" font-family="sans-serif" font-weight="700" font-size="22" fill="#3DD68C">.</text>
+
+  <!-- Nav items -->
+  <text x="650" y="43" font-family="sans-serif" font-size="11" font-weight="500" fill="#1A1A1A" letter-spacing="2">ABOUT</text>
+  <text x="730" y="43" font-family="sans-serif" font-size="11" font-weight="500" fill="#1A1A1A" letter-spacing="2">SERVICES</text>
+  <text x="830" y="43" font-family="sans-serif" font-size="11" font-weight="500" fill="#1A1A1A" letter-spacing="2">WORKS</text>
+  <text x="910" y="43" font-family="sans-serif" font-size="11" font-weight="500" fill="#1A1A1A" letter-spacing="2">BLOG</text>
+
+  <!-- CTA button -->
+  <rect x="1000" y="22" width="152" height="36" rx="4" fill="#3DD68C"/>
+  <text x="1076" y="45" font-family="sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" letter-spacing="2" text-anchor="middle">CONTACT</text>
+
+  <!-- Hero section -->
+  <rect x="48" y="120" width="540" height="8" rx="4" fill="#3DD68C" opacity="0.25"/>
+  <text x="48" y="117" font-family="sans-serif" font-size="11" font-weight="500" fill="#3DD68C" letter-spacing="3">TOTTORI WEB &amp; SEO</text>
+  <text x="48" y="210" font-family="sans-serif" font-weight="800" font-size="72" fill="#1A1A1A" letter-spacing="-3">Grow Your</text>
+  <text x="48" y="290" font-family="sans-serif" font-weight="800" font-size="72" fill="#3DD68C" letter-spacing="-3">Business</text>
+  <text x="48" y="370" font-family="sans-serif" font-weight="800" font-size="72" fill="#1A1A1A" letter-spacing="-3">Online.</text>
+  <rect x="48" y="400" width="380" height="10" rx="5" fill="#E8E8E4"/>
+  <rect x="48" y="420" width="300" height="10" rx="5" fill="#E8E8E4"/>
+  <rect x="48" y="470" width="180" height="48" rx="4" fill="#3DD68C"/>
+  <text x="138" y="501" font-family="sans-serif" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">お問い合わせ</text>
+  <rect x="246" y="470" width="160" height="48" rx="4" fill="none" stroke="#E8E8E4" stroke-width="1.5"/>
+  <text x="326" y="501" font-family="sans-serif" font-size="12" font-weight="600" fill="#1A1A1A" text-anchor="middle" letter-spacing="0.5">制作実績を見る</text>
+
+  <!-- Hero visual block -->
+  <rect x="660" y="100" width="492" height="420" rx="8" fill="#F4F4F0"/>
+  <rect x="980" y="420" width="100" height="100" rx="50" fill="#3DD68C" opacity="0.15"/>
+
+  <!-- Stats bar -->
+  <rect x="0" y="540" width="1200" height="100" fill="#1A1A1A"/>
+  <text x="150" y="583" font-family="sans-serif" font-weight="800" font-size="36" fill="#FFFFFF" letter-spacing="-1" text-anchor="middle">50+</text>
+  <text x="150" y="612" font-family="sans-serif" font-size="11" fill="#888888" text-anchor="middle" letter-spacing="0.5">制作実績</text>
+  <text x="450" y="583" font-family="sans-serif" font-weight="800" font-size="36" fill="#FFFFFF" letter-spacing="-1" text-anchor="middle">3<tspan fill="#3DD68C">x</tspan></text>
+  <text x="450" y="612" font-family="sans-serif" font-size="11" fill="#888888" text-anchor="middle" letter-spacing="0.5">平均流入増加率</text>
+  <text x="750" y="583" font-family="sans-serif" font-weight="800" font-size="36" fill="#FFFFFF" letter-spacing="-1" text-anchor="middle">98<tspan fill="#3DD68C">%</tspan></text>
+  <text x="750" y="612" font-family="sans-serif" font-size="11" fill="#888888" text-anchor="middle" letter-spacing="0.5">顧客継続率</text>
+  <text x="1050" y="583" font-family="sans-serif" font-weight="800" font-size="36" fill="#FFFFFF" letter-spacing="-1" text-anchor="middle">5<tspan fill="#3DD68C">年</tspan></text>
+  <text x="1050" y="612" font-family="sans-serif" font-size="11" fill="#888888" text-anchor="middle" letter-spacing="0.5">業界経験</text>
+  <line x1="300" y1="555" x2="300" y2="625" stroke="#333" stroke-width="1"/>
+  <line x1="600" y1="555" x2="600" y2="625" stroke="#333" stroke-width="1"/>
+  <line x1="900" y1="555" x2="900" y2="625" stroke="#333" stroke-width="1"/>
+
+  <!-- Services section -->
+  <rect x="0" y="660" width="1200" height="240" fill="#F4F4F0"/>
+  <text x="48" y="710" font-family="sans-serif" font-size="10" font-weight="500" fill="#3DD68C" letter-spacing="3">— SERVICES</text>
+  <text x="48" y="745" font-family="sans-serif" font-weight="700" font-size="28" fill="#1A1A1A" letter-spacing="-1">What We Do</text>
+
+  <!-- Service cards -->
+  <rect x="48" y="770" width="340" height="110" rx="4" fill="#FFFFFF"/>
+  <text x="68" y="800" font-family="sans-serif" font-size="10" font-weight="600" fill="#3DD68C" letter-spacing="2">01</text>
+  <text x="68" y="825" font-family="sans-serif" font-weight="700" font-size="16" fill="#1A1A1A">Web Design</text>
+  <rect x="68" y="838" width="200" height="8" rx="4" fill="#E8E8E4"/>
+  <rect x="68" y="854" width="150" height="8" rx="4" fill="#E8E8E4"/>
+
+  <rect x="430" y="770" width="340" height="110" rx="4" fill="#FFFFFF"/>
+  <text x="450" y="800" font-family="sans-serif" font-size="10" font-weight="600" fill="#3DD68C" letter-spacing="2">02</text>
+  <text x="450" y="825" font-family="sans-serif" font-weight="700" font-size="16" fill="#1A1A1A">SEO Strategy</text>
+  <rect x="450" y="838" width="200" height="8" rx="4" fill="#E8E8E4"/>
+  <rect x="450" y="854" width="150" height="8" rx="4" fill="#E8E8E4"/>
+
+  <rect x="812" y="770" width="340" height="110" rx="4" fill="#FFFFFF"/>
+  <text x="832" y="800" font-family="sans-serif" font-size="10" font-weight="600" fill="#3DD68C" letter-spacing="2">03</text>
+  <text x="832" y="825" font-family="sans-serif" font-weight="700" font-size="16" fill="#1A1A1A">Analytics</text>
+  <rect x="832" y="838" width="200" height="8" rx="4" fill="#E8E8E4"/>
+  <rect x="832" y="854" width="150" height="8" rx="4" fill="#E8E8E4"/>
+</svg>
