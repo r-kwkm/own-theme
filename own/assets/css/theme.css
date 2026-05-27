@@ -2140,6 +2140,74 @@ ul, ol { list-style: none; }
 .contact-form__submit svg { transition: transform 0.2s; }
 .contact-form__submit:hover svg { transform: translateX(4px); }
 
+/* CF7 スタイル上書き */
+.cf7-wrapper .wpcf7 { margin: 0; }
+.cf7-wrapper .wpcf7-form p { margin-bottom: 1.25rem; }
+.cf7-wrapper .wpcf7-form label {
+  display: block;
+  font-family: var(--font-ja);
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+}
+.cf7-wrapper .wpcf7-form input:not([type="submit"]):not([type="checkbox"]),
+.cf7-wrapper .wpcf7-form select,
+.cf7-wrapper .wpcf7-form textarea {
+  width: 100%;
+  padding: 0.75em 1em;
+  font-family: var(--font-ja);
+  font-size: 0.9375rem;
+  font-weight: 300;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+.cf7-wrapper .wpcf7-form input:focus,
+.cf7-wrapper .wpcf7-form select:focus,
+.cf7-wrapper .wpcf7-form textarea:focus { border-color: var(--accent); }
+.cf7-wrapper .wpcf7-form textarea { resize: vertical; line-height: 1.8; }
+.cf7-wrapper .wpcf7-form .wpcf7-form-control-wrap { display: block; }
+.cf7-wrapper .wpcf7-form input[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem 2.5rem;
+  background: var(--ink);
+  color: var(--white);
+  font-family: var(--font-en);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 0.5rem;
+  border-radius: 0;
+  width: auto;
+}
+.cf7-wrapper .wpcf7-form input[type="submit"]:hover { background: var(--accent); color: var(--accent-dark); }
+.cf7-wrapper .wpcf7-response-output {
+  margin: 1rem 0 0;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-ja);
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+}
+.cf7-wrapper .wpcf7-not-valid-tip {
+  font-family: var(--font-ja);
+  font-size: 0.75rem;
+  color: #e53e3e;
+  margin-top: 0.25rem;
+}
+.cf7-wrapper .wpcf7-spinner { margin-left: 0.5rem; }
+
 /* ============================================================
    Blog List Page
    ============================================================ */

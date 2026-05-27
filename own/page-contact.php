@@ -90,70 +90,9 @@ get_header(); ?>
 
         <!-- Form -->
         <div class="reveal" style="transition-delay:0.15s">
-          <?php
-          // Contact Form 7 のショートコードがある場合はそちらを優先
-          if ( have_posts() ) :
-            while ( have_posts() ) : the_post();
-              $content = get_the_content();
-              if ( trim( $content ) ) :
-                the_content();
-              else : ?>
-
-                <form name="contact" method="POST" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" class="contact-form" novalidate>
-                  <?php wp_nonce_field( 'own_contact_form', 'own_contact_nonce' ); ?>
-                  <input type="hidden" name="action" value="own_contact">
-
-                  <div class="contact-form__row">
-                    <label>お名前<span class="required">*</span></label>
-                    <input type="text" name="your-name" placeholder="山田 太郎" required>
-                  </div>
-
-                  <div class="contact-form__row">
-                    <label>会社名・屋号</label>
-                    <input type="text" name="your-company" placeholder="株式会社〇〇 / 個人">
-                  </div>
-
-                  <div class="contact-form__row">
-                    <label>メールアドレス<span class="required">*</span></label>
-                    <input type="email" name="your-email" placeholder="example@email.com" required>
-                  </div>
-
-                  <div class="contact-form__row">
-                    <label>ご相談内容</label>
-                    <select name="your-service">
-                      <option value="">選択してください（任意）</option>
-                      <option value="web">Webサイト制作・リニューアル</option>
-                      <option value="seo">SEO対策</option>
-                      <option value="meo">MEO対策</option>
-                      <option value="maintenance">保守・顧問</option>
-                      <option value="content">コンテンツ制作</option>
-                      <option value="other">その他・まずは相談したい</option>
-                    </select>
-                  </div>
-
-                  <div class="contact-form__row">
-                    <label>メッセージ<span class="required">*</span></label>
-                    <textarea name="your-message" rows="6" placeholder="ご相談内容をご自由にお書きください。「まだ何もわからない」でも大丈夫です。" required></textarea>
-                  </div>
-
-                  <div class="contact-form__row contact-form__row--privacy">
-                    <label style="display:flex;align-items:center;gap:0.6rem;font-weight:300;cursor:pointer;font-size:0.83rem;">
-                      <input type="checkbox" name="privacy" required style="width:auto;flex-shrink:0;accent-color:var(--accent);">
-                      <a href="<?php echo esc_url( home_url('/privacy-policy') ); ?>" target="_blank" style="color:var(--accent-dark);text-decoration:underline;">プライバシーポリシー</a>に同意して送信します。
-                    </label>
-                  </div>
-
-                  <button type="submit" class="contact-form__submit">
-                    送信する
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
-                  </button>
-                </form>
-
-              <?php endif;
-            endwhile;
-          endif; ?>
+          <div class="cf7-wrapper">
+            <?php echo do_shortcode('[contact-form-7 id="524a678" title="コンタクトフォーム 1"]'); ?>
+          </div>
         </div>
 
       </div>
