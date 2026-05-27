@@ -16,8 +16,8 @@ get_header(); ?>
         <span>Services</span>
       </nav>
       <p class="page-hero__num">— 02 / Services</p>
-      <h1 class="page-hero__en">What We Do.</h1>
-      <p class="page-hero__ja">提供サービス</p>
+      <p class="page-hero__en">What We Do.</p>
+      <h1 class="page-hero__ja">鳥取のホームページ制作・SEO対策・MEO対策サービス</h1>
       <p class="page-hero__lead">
         Web制作からSEO・MEO・保守まで、ビジネスのオンライン展開を一貫してサポート。<br>
         鳥取在住だから、対面相談もリモートも対応可能です。

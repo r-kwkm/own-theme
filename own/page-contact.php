@@ -16,8 +16,8 @@ get_header(); ?>
         <span>Contact</span>
       </nav>
       <p class="page-hero__num">— Contact</p>
-      <h1 class="page-hero__en">Get in Touch.</h1>
-      <p class="page-hero__ja">お問い合わせ</p>
+      <p class="page-hero__en">Get in Touch.</p>
+      <h1 class="page-hero__ja">鳥取のホームページ制作・SEO対策 無料相談</h1>
       <p class="page-hero__lead">
         お気軽にご相談ください。個人の方も大歓迎です。<br>
         初回相談は無料。通常1〜2営業日以内にご返信します。

@@ -16,8 +16,8 @@ get_header(); ?>
         <span>Activity</span>
       </nav>
       <p class="page-hero__num">— Activity</p>
-      <h1 class="page-hero__en">Social Activity.</h1>
-      <p class="page-hero__ja">社会への取り組み</p>
+      <p class="page-hero__en">Social Activity.</p>
+      <h1 class="page-hero__ja">社会への取り組み｜鳥取の保護猫活動サポート</h1>
       <p class="page-hero__lead">
         own. は事業活動を通じて、地域社会・動物福祉に貢献することを大切にしています。<br>
         小さな行動でも、続けることで社会は変えられると信じています。

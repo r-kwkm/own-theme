@@ -16,8 +16,8 @@ get_header(); ?>
         <span>About</span>
       </nav>
       <p class="page-hero__num">— About</p>
-      <h1 class="page-hero__en">About Own.</h1>
-      <p class="page-hero__ja">own. について</p>
+      <p class="page-hero__en">About Own.</p>
+      <h1 class="page-hero__ja">鳥取在住のWeb制作者 川上凌について</h1>
       <p class="page-hero__lead">
         鳥取を拠点に、中小企業・個人事業主のWebを一貫サポート。<br>
         「作って終わり」じゃなく、育てるサイトをつくります。

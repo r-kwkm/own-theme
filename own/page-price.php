@@ -16,8 +16,8 @@ get_header(); ?>
         <span>Price</span>
       </nav>
       <p class="page-hero__num">— Price</p>
-      <h1 class="page-hero__en">Pricing.</h1>
-      <p class="page-hero__ja">料金</p>
+      <p class="page-hero__en">Pricing.</p>
+      <h1 class="page-hero__ja">鳥取のホームページ制作 料金・プラン</h1>
       <p class="page-hero__lead">
         わかりやすい料金体系を心がけています。<br>
         まずは無料相談で、ご予算・目的に合ったプランをご提案します。

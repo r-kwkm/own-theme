@@ -16,8 +16,8 @@ get_header(); ?>
         <span>FAQ</span>
       </nav>
       <p class="page-hero__num">— FAQ</p>
-      <h1 class="page-hero__en">Frequently Asked.</h1>
-      <p class="page-hero__ja">よくある質問</p>
+      <p class="page-hero__en">Frequently Asked.</p>
+      <h1 class="page-hero__ja">鳥取のホームページ制作・SEO対策 よくある質問</h1>
       <p class="page-hero__lead">
         鳥取でWeb制作・SEO対策をご検討の方からよくいただく質問をまとめました。<br>
         解決しない場合はお気軽にお問い合わせください。
