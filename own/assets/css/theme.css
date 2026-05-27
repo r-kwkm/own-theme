@@ -1188,16 +1188,17 @@ ul, ol { list-style: none; }
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: var(--font-ja);
-  font-size: 0.8rem;
-  color: var(--muted);
 }
 .footer-contact svg { flex-shrink: 0; color: var(--muted); }
 .footer-contact a {
+  font-family: var(--font-ja);
+  font-size: 0.82rem;
   color: var(--muted);
+  letter-spacing: 0.04em;
   text-decoration: none;
+  transition: color 0.2s;
 }
-.footer-contact a:hover { color: var(--accent); }
+.footer-contact a:hover { color: var(--ink); }
 
 /* Nav */
 .footer-nav {
