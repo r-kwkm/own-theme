@@ -188,6 +188,21 @@ function own_pagination(): void {
 }
 
 /* ============================================================
+   OGP Image (fallback — Rank Math outputs no og:image by default)
+   ============================================================ */
+function own_ogp_image(): void {
+    $landscape = 'https://ownweb.jp/wp-content/uploads/2026/05/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8827%E6%97%A5_20_51_58_compressed.webp';
+    $square    = 'https://ownweb.jp/wp-content/uploads/2026/05/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8827%E6%97%A5_19_45_34_compressed.webp';
+
+    echo '<meta property="og:image" content="' . esc_url( $landscape ) . '" />' . "\n";
+    echo '<meta property="og:image:width" content="1200" />' . "\n";
+    echo '<meta property="og:image:height" content="630" />' . "\n";
+    echo '<meta property="og:image:type" content="image/webp" />' . "\n";
+    echo '<meta name="twitter:image" content="' . esc_url( $square ) . '" />' . "\n";
+}
+add_action( 'wp_head', 'own_ogp_image', 5 );
+
+/* ============================================================
    Structured Data (JSON-LD)
    ============================================================ */
 function own_structured_data(): void {
