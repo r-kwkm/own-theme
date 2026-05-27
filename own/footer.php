@@ -8,6 +8,10 @@
       <a href="<?php echo esc_url( home_url('/') ); ?>" class="footer-logo">own<span>.</span></a>
       <p class="footer-tagline">鳥取のホームページ制作・SEO対策</p>
       <p class="footer-desc">Webのことが全くわからなくても大丈夫です。<br>小さなお悩みからお気軽にどうぞ。</p>
+      <ul class="footer-contact">
+        <li><a href="tel:080862421110">0808-6242-1110</a></li>
+        <li><a href="mailto:ryo.kawakami.biz@gmail.com">ryo.kawakami.biz@gmail.com</a></li>
+      </ul>
     </div>
 
     <!-- Nav -->
