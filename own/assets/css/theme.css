@@ -2147,8 +2147,8 @@ ul, ol { list-style: none; }
   margin-bottom: 1.25rem;
 }
 
-/* ラベル */
-.cf7-wrapper .wpcf7-form label {
+/* ラベル（フィールド名） */
+.cf7-wrapper .wpcf7-form p > label {
   display: block;
   font-family: var(--font-ja);
   font-size: 0.8rem;
@@ -2156,7 +2156,7 @@ ul, ol { list-style: none; }
   color: var(--ink);
   margin-bottom: 0;
 }
-.cf7-wrapper .wpcf7-form label br { display: none; }
+.cf7-wrapper .wpcf7-form p > label > br { display: none; }
 .cf7-wrapper .wpcf7-form .wpcf7-form-control-wrap {
   display: block;
   margin-top: 0.4rem;
@@ -2168,10 +2168,10 @@ ul, ol { list-style: none; }
   position: relative;
 }
 
-/* 必須マーク：aria-required="true" の入力を含むラベルに自動付与 */
-.cf7-wrapper .wpcf7-form label:has([aria-required="true"])::after {
-  content: " *";
+/* 必須マーク */
+.cf7-wrapper .wpcf7-form .required {
   color: var(--accent);
+  margin-left: 0.25rem;
 }
 
 /* 入力欄 */
