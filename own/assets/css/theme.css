@@ -723,6 +723,7 @@ ul, ol { list-style: none; }
 }
 
 .trouble-text {
+  font-family: var(--font-ja);
   font-size: 0.95rem;
   font-weight: 400;
   color: var(--ink);
@@ -730,6 +731,7 @@ ul, ol { list-style: none; }
 }
 
 .trouble-solve {
+  font-family: var(--font-ja);
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--accent);
