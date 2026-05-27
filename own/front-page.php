@@ -29,7 +29,7 @@ get_header(); ?>
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </a>
-        <a href="[取得したURLをここに貼る]" class="btn-line" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
+        <a href="https://line.me/R/ti/p/@000kwiaj" class="btn-line" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
       </div>
 
       <p class="hero-sub-note">初回相談は無料。Webのことが全くわからなくても大丈夫です。</p>
