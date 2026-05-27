@@ -2142,15 +2142,36 @@ ul, ol { list-style: none; }
 
 /* CF7 スタイル上書き */
 .cf7-wrapper .wpcf7 { margin: 0; }
-.cf7-wrapper .wpcf7-form p { margin-bottom: 1.25rem; }
+.cf7-wrapper .wpcf7-form p {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+/* ラベル */
 .cf7-wrapper .wpcf7-form label {
   display: block;
   font-family: var(--font-ja);
   font-size: 0.8rem;
   font-weight: 500;
-  margin-bottom: 0.4rem;
   color: var(--ink);
+  margin-bottom: 0;
 }
+.cf7-wrapper .wpcf7-form label br { display: none; }
+.cf7-wrapper .wpcf7-form .wpcf7-form-control-wrap {
+  display: block;
+  margin-top: 0.4rem;
+}
+
+/* [required] テキストを非表示 */
+.cf7-wrapper .wpcf7-form label > .wpcf7-form-control-wrap:first-of-type { }
+.cf7-wrapper .wpcf7-form p > label {
+  position: relative;
+}
+
+/* 必須マーク */
+.cf7-wrapper .wpcf7-form .required { color: var(--accent); margin-left: 0.25rem; }
+
+/* 入力欄 */
 .cf7-wrapper .wpcf7-form input:not([type="submit"]):not([type="checkbox"]),
 .cf7-wrapper .wpcf7-form select,
 .cf7-wrapper .wpcf7-form textarea {
@@ -2170,13 +2191,28 @@ ul, ol { list-style: none; }
 }
 .cf7-wrapper .wpcf7-form input:focus,
 .cf7-wrapper .wpcf7-form select:focus,
-.cf7-wrapper .wpcf7-form textarea:focus { border-color: var(--accent); }
+.cf7-wrapper .wpcf7-form textarea:focus { border-color: var(--accent); outline: none; }
 .cf7-wrapper .wpcf7-form textarea { resize: vertical; line-height: 1.8; }
-.cf7-wrapper .wpcf7-form .wpcf7-form-control-wrap { display: block; }
-.cf7-wrapper .wpcf7-form input[type="submit"] {
-  display: inline-flex;
+
+/* チェックボックス（プライバシー） */
+.cf7-wrapper .wpcf7-acceptance label {
+  display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.6rem;
+  font-size: 0.83rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+.cf7-wrapper .wpcf7-acceptance input[type="checkbox"] {
+  width: auto;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+}
+.cf7-wrapper .wpcf7-acceptance a { color: var(--accent-dark); text-decoration: underline; }
+
+/* 送信ボタン */
+.cf7-wrapper .wpcf7-form input[type="submit"] {
+  display: inline-block;
   padding: 1rem 2.5rem;
   background: var(--ink);
   color: var(--white);
@@ -2193,20 +2229,34 @@ ul, ol { list-style: none; }
   width: auto;
 }
 .cf7-wrapper .wpcf7-form input[type="submit"]:hover { background: var(--accent); color: var(--accent-dark); }
-.cf7-wrapper .wpcf7-response-output {
-  margin: 1rem 0 0;
-  padding: 0.75rem 1rem;
-  font-family: var(--font-ja);
-  font-size: 0.85rem;
-  border: 1px solid var(--border);
-}
+
+/* バリデーションエラー */
 .cf7-wrapper .wpcf7-not-valid-tip {
   font-family: var(--font-ja);
   font-size: 0.75rem;
   color: #e53e3e;
-  margin-top: 0.25rem;
+  margin-top: 0.3rem;
+  display: block;
 }
-.cf7-wrapper .wpcf7-spinner { margin-left: 0.5rem; }
+.cf7-wrapper .wpcf7-form input.wpcf7-not-valid,
+.cf7-wrapper .wpcf7-form textarea.wpcf7-not-valid,
+.cf7-wrapper .wpcf7-form select.wpcf7-not-valid { border-color: #e53e3e; }
+
+/* 送信結果メッセージ */
+.cf7-wrapper .wpcf7-response-output {
+  margin: 1.25rem 0 0;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-ja);
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 0;
+}
+.cf7-wrapper .wpcf7-form.sent .wpcf7-response-output { border-color: var(--accent); color: var(--ink); }
+.cf7-wrapper .wpcf7-form.failed .wpcf7-response-output,
+.cf7-wrapper .wpcf7-form.invalid .wpcf7-response-output { border-color: #e53e3e; color: #e53e3e; }
+
+/* スピナー */
+.cf7-wrapper .wpcf7-spinner { margin-left: 0.5rem; vertical-align: middle; }
 
 /* ============================================================
    Blog List Page
