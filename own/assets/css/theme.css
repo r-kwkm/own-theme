@@ -2168,8 +2168,11 @@ ul, ol { list-style: none; }
   position: relative;
 }
 
-/* 必須マーク */
-.cf7-wrapper .wpcf7-form .required { color: var(--accent); margin-left: 0.25rem; }
+/* 必須マーク：aria-required="true" の入力を含むラベルに自動付与 */
+.cf7-wrapper .wpcf7-form label:has([aria-required="true"])::after {
+  content: " *";
+  color: var(--accent);
+}
 
 /* 入力欄 */
 .cf7-wrapper .wpcf7-form input:not([type="submit"]):not([type="checkbox"]),
