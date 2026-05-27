@@ -188,6 +188,111 @@ function own_pagination(): void {
 }
 
 /* ============================================================
+   Structured Data (JSON-LD)
+   ============================================================ */
+function own_structured_data(): void {
+    $site_url = 'https://ownweb.jp';
+
+    $organization = [
+        '@context' => 'https://schema.org',
+        '@type'    => 'ProfessionalService',
+        '@id'      => $site_url . '/#organization',
+        'name'     => 'own.',
+        'url'      => $site_url . '/',
+        'logo'     => [
+            '@type' => 'ImageObject',
+            'url'   => $site_url . '/wp-content/uploads/2026/05/ChatGPT_Image_2026年5月27日_19_45_34_compressed.webp',
+        ],
+        'description'  => '鳥取のホームページ制作・SEO対策・MEO対策。WordPressを基本に、集客できるWebサイト制作とSEO設計を一貫サポート。',
+        'telephone'    => '080-6242-1110',
+        'email'        => 'ryo.kawakami.biz@gmail.com',
+        'address'      => [
+            '@type'           => 'PostalAddress',
+            'addressRegion'   => '鳥取県',
+            'addressCountry'  => 'JP',
+        ],
+        'areaServed'   => ['鳥取県', '鳥取市', '米子市', '倉吉市', '日本全国'],
+        'serviceType'  => ['ホームページ制作', 'WordPress制作', 'SEO対策', 'MEO対策', 'Webサイト保守'],
+        'priceRange'   => '¥¥',
+        'sameAs'       => [],
+    ];
+
+    $website = [
+        '@context'        => 'https://schema.org',
+        '@type'           => 'WebSite',
+        '@id'             => $site_url . '/#website',
+        'url'             => $site_url . '/',
+        'name'            => 'own. | 鳥取のホームページ制作・SEO対策',
+        'publisher'       => [ '@id' => $site_url . '/#organization' ],
+        'inLanguage'      => 'ja',
+        'potentialAction' => [
+            '@type'       => 'SearchAction',
+            'target'      => [
+                '@type'       => 'EntryPoint',
+                'urlTemplate' => $site_url . '/?s={search_term_string}',
+            ],
+            'query-input' => 'required name=search_term_string',
+        ],
+    ];
+
+    echo '<script type="application/ld+json">' . wp_json_encode( $organization, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
+    echo '<script type="application/ld+json">' . wp_json_encode( $website, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
+
+    // FAQPage schema — FAQ page only
+    if ( is_page( 'faq' ) ) {
+        $faqs = [
+            [ '鳥取でホームページ制作を依頼すると費用はどのくらいかかりますか？', 'スモールサイト（5〜8ページ）で30万円〜が目安です。ページ数・デザインの複雑さ・機能によって変動します。まずはご要望をお聞きして無料でお見積りします。' ],
+            [ '制作期間はどのくらいかかりますか？', '基本的に1〜2ヶ月が目安です。ご要望・ヒアリング内容・修正回数によって前後します。' ],
+            [ 'SEO対策をお願いすると、すぐに検索上位に表示されますか？', 'SEO対策の効果が出るまでには一般的に3〜6ヶ月かかります。地道な改善を継続することで、安定した集客が実現できます。' ],
+            [ 'WordPressでサイトを作ってもらえますか？', 'はい。own.ではWordPressを基本として制作しています。公開後にご自身で更新・投稿できる環境を整えます。' ],
+            [ '月額費用はかかりますか？', 'Web制作のみであれば制作費のみです。保守プラン（月3万円〜）・SEO対策（月5万円〜）は任意のオプションです。' ],
+            [ '鳥取・米子・倉吉エリア以外の会社でもお願いできますか？', 'もちろんです。リモートで全国対応しています。オンラインミーティング・メール・チャットで進めることができます。' ],
+            [ '見積もりだけお願いすることはできますか？', 'できます。お見積りは無料です。お問い合わせフォームよりご連絡ください。' ],
+        ];
+
+        $faq_schema = [
+            '@context'   => 'https://schema.org',
+            '@type'      => 'FAQPage',
+            'mainEntity' => array_map( fn( $f ) => [
+                '@type'          => 'Question',
+                'name'           => $f[0],
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text'  => $f[1],
+                ],
+            ], $faqs ),
+        ];
+
+        echo '<script type="application/ld+json">' . wp_json_encode( $faq_schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
+    }
+
+    // BreadcrumbList — all pages except front page
+    if ( ! is_front_page() && is_page() ) {
+        $breadcrumb = [
+            '@context'        => 'https://schema.org',
+            '@type'           => 'BreadcrumbList',
+            'itemListElement' => [
+                [
+                    '@type'    => 'ListItem',
+                    'position' => 1,
+                    'name'     => 'Home',
+                    'item'     => $site_url . '/',
+                ],
+                [
+                    '@type'    => 'ListItem',
+                    'position' => 2,
+                    'name'     => get_the_title(),
+                    'item'     => get_permalink(),
+                ],
+            ],
+        ];
+
+        echo '<script type="application/ld+json">' . wp_json_encode( $breadcrumb, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
+    }
+}
+add_action( 'wp_head', 'own_structured_data' );
+
+/* ============================================================
    Performance / Security
    ============================================================ */
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
