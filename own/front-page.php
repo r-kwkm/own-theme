@@ -89,40 +89,23 @@ get_header(); ?>
     <p class="section-en">Any of these sound familiar?</p>
     <p class="section-ja">こんなお悩みありませんか？</p>
 
-    <div class="pain-grid">
+    <div class="trouble-grid">
       <?php
       $pains = [
-        [
-          'voice' => '「Instagramだけで、ほんとに大丈夫かな…」',
-          'solve' => 'SNSとwebの役割、一緒に整理しましょう',
-        ],
-        [
-          'voice' => '「何年も更新してないサイト、どうにかしたい」',
-          'solve' => '今あるものを活かして、小さく始めて大丈夫です',
-        ],
-        [
-          'voice' => '「うちのお店、Googleで出てこないんだけど…」',
-          'solve' => '地図にも検索にも、ちゃんと出るようにします',
-        ],
-        [
-          'voice' => '「制作会社って、なんか話しかけにくくて」',
-          'solve' => '同じ鳥取にいます。気軽に声かけてください',
-        ],
-        [
-          'voice' => '「プロフィール文だけちょっと直したい」',
-          'solve' => '小さな修正も、ご相談ください',
-        ],
-        [
-          'voice' => '「作ってもらったあと、困っても誰に言えばいいの」',
-          'solve' => '公開後もしっかりサポートします',
-        ],
+        [ 'voice' => '「Instagramだけで、ほんとに大丈夫かな…」',          'solve' => 'SNSとwebの役割、一緒に整理しましょう' ],
+        [ 'voice' => '「何年も更新してないサイト、どうにかしたい」',        'solve' => '今あるものを活かして、小さく始めて大丈夫です' ],
+        [ 'voice' => '「うちのお店、Googleで出てこないんだけど…」',        'solve' => '地図にも検索にも、ちゃんと出るようにします' ],
+        [ 'voice' => '「制作会社って、なんか話しかけにくくて」',            'solve' => '同じ鳥取にいます。気軽に声かけてください' ],
+        [ 'voice' => '「プロフィール文だけちょっと直したい」',              'solve' => '小さな修正も、ご相談ください' ],
+        [ 'voice' => '「作ってもらったあと、困っても誰に言えばいいの」',    'solve' => '公開後もしっかりサポートします' ],
       ];
-      foreach ( $pains as $i => $pain ) :
-        $delay = $i * 0.08;
-      ?>
-        <div class="pain-card reveal" style="transition-delay:<?php echo $delay; ?>s">
-          <p class="pain-voice"><?php echo esc_html( $pain['voice'] ); ?></p>
-          <p class="pain-solve">→ <?php echo esc_html( $pain['solve'] ); ?></p>
+      foreach ( $pains as $i => $pain ) : ?>
+        <div class="trouble-item reveal" style="transition-delay:<?php echo $i * 0.08; ?>s">
+          <span class="trouble-num"><?php echo str_pad( $i + 1, 2, '0', STR_PAD_LEFT ); ?></span>
+          <div>
+            <p class="trouble-text"><?php echo esc_html( $pain['voice'] ); ?></p>
+            <p class="trouble-solve">→ <?php echo esc_html( $pain['solve'] ); ?></p>
+          </div>
         </div>
       <?php endforeach; ?>
     </div>
