@@ -105,18 +105,18 @@ get_header(); ?>
       <p class="section-num">— こんなお悩みも</p>
       <p class="section-en">Any of these?</p>
       <p class="section-ja">こんな相談でも大丈夫</p>
-      <div class="trouble-grid">
+      <div class="pain-grid">
         <?php
         $troubles = [
-          '「Googleでお店が出てこない」',
-          '「ホームページあるけど何もわからない」',
-          '「文章をちょっとだけ直したい」',
-          '「Web周りを誰かに任せたい」',
+          [ 'voice' => '「Googleでお店が出てこない」',          'solve' => '地図にも検索にも、ちゃんと出るようにします' ],
+          [ 'voice' => '「ホームページあるけど何もわからない」', 'solve' => '今あるものを活かして、小さく始めて大丈夫です' ],
+          [ 'voice' => '「文章をちょっとだけ直したい」',        'solve' => '小さな修正も、お気軽にご相談ください' ],
+          [ 'voice' => '「Web周りを誰かに任せたい」',           'solve' => '窓口ひとつで、まるっとお任せください' ],
         ];
-        foreach ( $troubles as $i => $text ) : ?>
-          <div class="trouble-item reveal" style="transition-delay:<?php echo $i * 0.1; ?>s">
-            <span class="trouble-num"><?php echo str_pad( $i + 1, 2, '0', STR_PAD_LEFT ); ?></span>
-            <p class="trouble-text"><?php echo esc_html( $text ); ?></p>
+        foreach ( $troubles as $i => $t ) : ?>
+          <div class="pain-card reveal" style="transition-delay:<?php echo $i * 0.08; ?>s">
+            <p class="pain-voice"><?php echo esc_html( $t['voice'] ); ?></p>
+            <p class="pain-solve">→ <?php echo esc_html( $t['solve'] ); ?></p>
           </div>
         <?php endforeach; ?>
       </div>
