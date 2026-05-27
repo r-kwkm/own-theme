@@ -162,7 +162,7 @@ get_header();
           'num'  => '05',
           'name' => 'コンテンツ制作',
           'desc' => 'SEOに強いブログ記事の構成から執筆まで。検索で見つけてもらえるコンテンツを。',
-          'price'=> '2万円 / 本',
+          'price'=> '3万円 / 本',
         ],
         [
           'icon' => '<svg viewBox="0 0 40 40" fill="none"><rect x="8" y="12" width="24" height="18" rx="2" stroke="#1a1a1a" stroke-width="1.5"/><path d="M14 20h12M14 25h8M20 8v4" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
