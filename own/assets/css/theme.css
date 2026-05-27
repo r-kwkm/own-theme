@@ -1177,6 +1177,28 @@ ul, ol { list-style: none; }
   line-height: 1.9;
 }
 
+.footer-contact {
+  list-style: none;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-ja);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.footer-contact svg { flex-shrink: 0; color: var(--muted); }
+.footer-contact a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.footer-contact a:hover { color: var(--accent); }
+
 /* Nav */
 .footer-nav {
   display: contents;
