@@ -729,6 +729,13 @@ ul, ol { list-style: none; }
   line-height: 1.7;
 }
 
+.trouble-solve {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 0.35rem;
+}
+
 /* ===== SERVICES NOTE ===== */
 .services-note {
   margin-top: 1.5rem;

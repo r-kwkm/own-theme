@@ -105,18 +105,21 @@ get_header(); ?>
       <p class="section-num">— こんなお悩みも</p>
       <p class="section-en">Any of these?</p>
       <p class="section-ja">こんな相談でも大丈夫</p>
-      <div class="pain-grid">
+      <div class="trouble-grid">
         <?php
         $troubles = [
-          [ 'voice' => '「Googleでお店が出てこない」',          'solve' => '地図にも検索にも、ちゃんと出るようにします' ],
-          [ 'voice' => '「ホームページあるけど何もわからない」', 'solve' => '今あるものを活かして、小さく始めて大丈夫です' ],
-          [ 'voice' => '「文章をちょっとだけ直したい」',        'solve' => '小さな修正も、お気軽にご相談ください' ],
-          [ 'voice' => '「Web周りを誰かに任せたい」',           'solve' => '窓口ひとつで、まるっとお任せください' ],
+          [ 'text' => '「Googleでお店が出てこない」',          'solve' => '地図にも検索にも、ちゃんと出るようにします' ],
+          [ 'text' => '「ホームページあるけど何もわからない」', 'solve' => '今あるものを活かして、小さく始めて大丈夫です' ],
+          [ 'text' => '「文章をちょっとだけ直したい」',        'solve' => '小さな修正も、お気軽にご相談ください' ],
+          [ 'text' => '「Web周りを誰かに任せたい」',           'solve' => '窓口ひとつで、まるっとお任せください' ],
         ];
         foreach ( $troubles as $i => $t ) : ?>
-          <div class="pain-card reveal" style="transition-delay:<?php echo $i * 0.08; ?>s">
-            <p class="pain-voice"><?php echo esc_html( $t['voice'] ); ?></p>
-            <p class="pain-solve">→ <?php echo esc_html( $t['solve'] ); ?></p>
+          <div class="trouble-item reveal" style="transition-delay:<?php echo $i * 0.1; ?>s">
+            <span class="trouble-num"><?php echo str_pad( $i + 1, 2, '0', STR_PAD_LEFT ); ?></span>
+            <div>
+              <p class="trouble-text"><?php echo esc_html( $t['text'] ); ?></p>
+              <p class="trouble-solve">→ <?php echo esc_html( $t['solve'] ); ?></p>
+            </div>
           </div>
         <?php endforeach; ?>
       </div>
