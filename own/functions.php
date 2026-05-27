@@ -195,7 +195,7 @@ function own_structured_data(): void {
 
     $organization = [
         '@context' => 'https://schema.org',
-        '@type'    => 'ProfessionalService',
+        '@type'    => [ 'LocalBusiness', 'ProfessionalService' ],
         '@id'      => $site_url . '/#organization',
         'name'     => 'own.',
         'url'      => $site_url . '/',
