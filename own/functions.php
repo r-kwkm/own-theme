@@ -217,26 +217,8 @@ function own_structured_data(): void {
         'sameAs'       => [],
     ];
 
-    $website = [
-        '@context'        => 'https://schema.org',
-        '@type'           => 'WebSite',
-        '@id'             => $site_url . '/#website',
-        'url'             => $site_url . '/',
-        'name'            => 'own. | 鳥取のホームページ制作・SEO対策',
-        'publisher'       => [ '@id' => $site_url . '/#organization' ],
-        'inLanguage'      => 'ja',
-        'potentialAction' => [
-            '@type'       => 'SearchAction',
-            'target'      => [
-                '@type'       => 'EntryPoint',
-                'urlTemplate' => $site_url . '/?s={search_term_string}',
-            ],
-            'query-input' => 'required name=search_term_string',
-        ],
-    ];
-
+    // Rank Math outputs WebSite schema — only output ProfessionalService to enrich Rank Math's basic Organization
     echo '<script type="application/ld+json">' . wp_json_encode( $organization, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
-    echo '<script type="application/ld+json">' . wp_json_encode( $website, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
 
     // FAQPage schema — FAQ page only
     if ( is_page( 'faq' ) ) {
