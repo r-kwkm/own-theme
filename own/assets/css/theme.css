@@ -1500,8 +1500,8 @@ ul, ol { list-style: none; }
   /* Service cards — 1列 */
   .service-cards-grid { grid-template-columns: 1fr; }
 
-  /* Footer — 完全1列 */
-  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  /* Footer — brand全幅、menu/info横並び */
+  .footer-inner { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 
   /* About stats — 2列維持 */
   .about-stats { grid-template-columns: repeat(2, 1fr); }
