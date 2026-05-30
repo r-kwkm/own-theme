@@ -1397,10 +1397,10 @@ ul, ol { list-style: none; }
   .site-nav { padding: 1rem 1.5rem; }
 
   /* Hero */
-  .hero { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; min-height: 100svh; }
   .hero-left {
     justify-content: flex-start;
-    padding: 2.5rem 1.5rem 3rem;
+    padding: 2.5rem 1.5rem 2rem;
   }
   .hero-right { display: none; }
   .hero-eyebrow { margin-bottom: 1.5rem; }
@@ -1408,7 +1408,7 @@ ul, ol { list-style: none; }
   .hero-desc { font-size: 0.95rem; margin-bottom: 2.25rem; }
   .hero-actions  { justify-content: center; }
   .hero-sub-note { text-align: center; margin-top: 1rem; }
-  .hero-sub-links { justify-content: center; margin-top: 0.75rem; }
+  .hero-sub-links { justify-content: center; margin-top: auto; padding-top: 0.75rem; }
 
   /* モバイル専用改行 */
   .sp-br { display: block; }
@@ -1490,7 +1490,7 @@ ul, ol { list-style: none; }
 
 @media (max-width: 480px) {
   /* Hero */
-  .hero-left { padding: 2rem 1.25rem 3rem; }
+  .hero-left { padding: 2rem 1.25rem 2rem; }
   .hero-actions { flex-direction: column; align-items: center; }
   .hero-actions .btn-primary,
   .hero-actions .btn-line { width: 100%; justify-content: center; }
