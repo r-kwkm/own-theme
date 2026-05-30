@@ -72,7 +72,7 @@
   ] );
   ?>
   <div class="mobile-nav__contact">
-    <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Free Consultation →</a>
+    <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">無料相談をする →</a>
   </div>
   <div class="mobile-nav__deco">
     <p>Web Design &amp; SEO</p>
