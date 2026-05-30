@@ -228,7 +228,7 @@ get_header(); ?>
       <p class="cta-banner__eyebrow">Contact</p>
       <h2 class="cta-banner__title">Let's Work<br>Together.</h2>
       <p class="cta-banner__text">
-        まずは無料相談から。ご予算・ご要望をお聞かせください。
+        まずは無料相談から。<br>ご予算・ご要望をお聞かせください。
       </p>
       <a href="<?php echo esc_url( home_url('/contact') ); ?>" class="btn btn--primary">
         無料相談をする
