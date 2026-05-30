@@ -350,6 +350,9 @@ ul, ol { list-style: none; }
   overflow: hidden;
 }
 
+/* hero-left直下のコンテンツをウォーターマークより前面に */
+.hero-left > * { position: relative; z-index: 1; }
+
 @media (max-width: 768px) {
   .hero-left::before {
     content: 'own.';
@@ -360,12 +363,11 @@ ul, ol { list-style: none; }
     font-size: clamp(10rem, 40vw, 18rem);
     font-weight: 800;
     color: var(--ink);
-    opacity: 0.05;
+    opacity: 0.06;
     letter-spacing: -0.04em;
     line-height: 1;
     pointer-events: none;
     user-select: none;
-    z-index: -1;
   }
 }
 
