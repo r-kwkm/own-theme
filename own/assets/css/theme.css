@@ -1465,9 +1465,11 @@ ul, ol { list-style: none; }
   .page-hero__en { font-size: clamp(1.5rem, 7vw, 2rem); margin-bottom: 0.25rem; }
   .page-hero__ja { font-size: 1rem; margin-bottom: 0.75rem; }
   .page-hero__lead { font-size: 0.875rem; line-height: 1.75; }
-  .service-detail-card { padding: 1.75rem 1.25rem; }
+  .service-detail-card { padding: 1.5rem 1.25rem; }
   .service-detail-card__name { font-size: 1.05rem; }
   .service-detail-card__desc { font-size: 0.85rem; }
+  .service-detail-card__for { margin-top: 0; padding: 0.75rem 1rem; }
+  .service-detail-card__for-list { font-size: 0.78rem; }
 
   .about-profile { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-profile__img { max-height: 420px; aspect-ratio: 4 / 3; }
@@ -1479,7 +1481,7 @@ ul, ol { list-style: none; }
   .price-grid       { grid-template-columns: 1fr; }
   .price-grid--2col { grid-template-columns: 1fr; }
 
-  .service-cards-grid { grid-template-columns: 1fr; }
+  .service-cards-grid { grid-template-columns: repeat(2, 1fr); }
 
   .blog-list-grid { grid-template-columns: 1fr; }
 

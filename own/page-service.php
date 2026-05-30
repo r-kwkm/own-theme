@@ -39,7 +39,7 @@ get_header(); ?>
             'name'  => 'Web制作',
             'desc'  => '集客できるWordPressサイトをSEO設計込みで制作。ターゲット・目的・キーワードを整理した上でデザイン・構築。公開後の運用まで見据えたサイト設計を行います。',
             'for'   => ['新規でホームページを作りたい方', 'リニューアルを検討している方', '自分で更新できるサイトが欲しい方'],
-            'price' => '30万円〜',
+            'price' => '15万円〜',
           ],
           [
             'icon'  => '<svg viewBox="0 0 40 40" fill="none"><circle cx="18" cy="18" r="11" stroke="#1a1a1a" stroke-width="1.5"/><path d="M26 26l6 6" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
