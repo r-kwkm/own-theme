@@ -1436,6 +1436,12 @@ ul, ol { list-style: none; }
   /* CTA Banner */
   .cta-banner { padding-block: 5rem; }
   .cta-banner__text { font-size: 0.9rem; }
+  .cta-banner .btn--primary {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 1.1em 2em;
+  }
 
   /* Footer */
   .footer-inner {
