@@ -30,27 +30,24 @@ get_header(); ?>
     <div style="max-width:1200px;margin-inline:auto;">
 
       <!-- 保護猫活動 -->
-      <div class="activity-section reveal" style="margin-bottom:1.5rem;">
+      <div class="activity-card reveal" style="border:1px solid var(--border);margin-bottom:1.5rem;">
+        <span class="activity-card__tag">Animal Welfare</span>
+        <h2 class="activity-card__title">保護猫活動のサポート</h2>
+        <p class="activity-card__text">
+          own. は、鳥取県内で保護猫の譲渡活動・TNR活動を行う「ohana」を支援しています。<br>
+          Webサイトの制作・SEO設計を通じて、一頭でも多くの猫が家族のもとへ届くよう、Webの力で活動を後押ししています。
+        </p>
 
-        <div class="activity-card">
-          <span class="activity-card__tag">Animal Welfare</span>
-          <h2 class="activity-card__title">保護猫活動のサポート</h2>
-          <p class="activity-card__text">
-            own. は、鳥取県内で保護猫の譲渡活動・TNR活動を行う「ohana」を支援しています。<br>
-            Webサイトの制作・SEO設計を通じて、一頭でも多くの猫が家族のもとへ届くよう、Webの力で活動を後押ししています。
-          </p>
-          <a href="https://ohana-hogoneko.jp/" class="activity-card__link" target="_blank" rel="noopener noreferrer">
-            保護猫サイトを見る
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-            </svg>
-          </a>
-        </div>
-
-        <div class="activity-img">
+        <div class="activity-img" style="margin:0 -2.5rem 2rem;">
           <img src="https://ownweb.jp/wp-content/uploads/2026/05/FireShot-Capture-030-保護猫Ohana-ohana-hogoneko.jp_-scaled.png" alt="保護猫活動の様子" style="width:100%;height:auto;display:block;">
         </div>
 
+        <a href="https://ohana-hogoneko.jp/" class="activity-card__link" target="_blank" rel="noopener noreferrer">
+          保護猫サイトを見る
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </a>
       </div>
 
       <!-- 地域貢献 -->

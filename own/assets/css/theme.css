@@ -2474,6 +2474,7 @@ ul, ol { list-style: none; }
   background: var(--white);
   padding: 3rem 2.5rem;
   transition: background 0.2s;
+  overflow: hidden;
 }
 
 .activity-card:hover { background: var(--surface); }
