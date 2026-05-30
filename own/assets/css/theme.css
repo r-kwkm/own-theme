@@ -1794,7 +1794,7 @@ ul, ol { list-style: none; }
 
 .service-detail-card__price {
   font-family: var(--font-en);
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--accent-dark);
   letter-spacing: 0.05em;
@@ -2735,7 +2735,7 @@ ul, ol { list-style: none; }
    Responsive additions
    ============================================================ */
 @media (max-width: 768px) {
-  .page-hero { padding: 4rem 1.5rem 3rem; }
+  .page-hero { padding: 6rem 1.5rem 3rem; }
   .page-body { padding: 4rem 1.5rem; }
   .about-profile { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-stats { grid-template-columns: repeat(2, 1fr); }
