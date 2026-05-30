@@ -1465,11 +1465,18 @@ ul, ol { list-style: none; }
   .page-hero__en { font-size: clamp(1.5rem, 7vw, 2rem); margin-bottom: 0.25rem; }
   .page-hero__ja { font-size: 1rem; margin-bottom: 0.75rem; }
   .page-hero__lead { font-size: 0.875rem; line-height: 1.75; }
-  .service-detail-card { padding: 1.5rem 1.25rem; }
-  .service-detail-card__name { font-size: 1.05rem; }
-  .service-detail-card__desc { font-size: 0.85rem; }
-  .service-detail-card__for { margin-top: 0; padding: 0.75rem 1rem; }
+  .service-detail-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.25rem;
+  }
+  .service-detail-card__icon { margin-bottom: 1.25rem; align-self: auto; margin-top: 0; }
+  .service-detail-card__num { margin-bottom: 1.25rem; }
+  .service-detail-card__name { font-size: 1.05rem; margin-bottom: 0.75rem; }
+  .service-detail-card__desc { font-size: 0.85rem; margin-bottom: 1.5rem; align-self: auto; }
+  .service-detail-card__for { margin-top: 0; padding: 0.75rem 1rem; margin-bottom: 1.5rem; }
   .service-detail-card__for-list { font-size: 0.78rem; }
+  .service-detail-card__price { margin-top: 0; }
 
   .about-profile { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-profile__img { max-height: 420px; aspect-ratio: 4 / 3; }
@@ -1481,7 +1488,7 @@ ul, ol { list-style: none; }
   .price-grid       { grid-template-columns: 1fr; }
   .price-grid--2col { grid-template-columns: 1fr; }
 
-  .service-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-cards-grid { grid-template-columns: 1fr; }
 
   .blog-list-grid { grid-template-columns: 1fr; }
 
@@ -1710,7 +1717,7 @@ ul, ol { list-style: none; }
    ============================================================ */
 .service-cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -1793,6 +1800,48 @@ ul, ol { list-style: none; }
   letter-spacing: 0.05em;
   border-top: 1px solid var(--border);
   padding-top: 1rem;
+}
+
+/* Service detail card — desktop horizontal layout */
+@media (min-width: 769px) {
+  .service-detail-card {
+    display: grid;
+    grid-template-columns: 40px 160px 1fr 210px;
+    grid-template-rows: auto 1fr auto;
+    align-items: start;
+    column-gap: 2rem;
+    row-gap: 0;
+  }
+  .service-detail-card__icon {
+    grid-column: 1; grid-row: 1 / 3;
+    margin-bottom: 0;
+    align-self: start;
+    margin-top: 4px;
+  }
+  .service-detail-card__num {
+    grid-column: 2; grid-row: 1;
+    margin-bottom: 0.5rem;
+  }
+  .service-detail-card__name {
+    grid-column: 2; grid-row: 2;
+    margin-bottom: 0;
+  }
+  .service-detail-card__desc {
+    grid-column: 3; grid-row: 1 / 4;
+    margin-bottom: 0;
+    align-self: center;
+  }
+  .service-detail-card__for {
+    grid-column: 4; grid-row: 1 / 3;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .service-detail-card__price {
+    grid-column: 4; grid-row: 3;
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+    margin-top: 0;
+  }
 }
 
 /* ============================================================
