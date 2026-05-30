@@ -1717,7 +1717,7 @@ ul, ol { list-style: none; }
    ============================================================ */
 .service-cards-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -1800,48 +1800,6 @@ ul, ol { list-style: none; }
   letter-spacing: 0.05em;
   border-top: 1px solid var(--border);
   padding-top: 1rem;
-}
-
-/* Service detail card — desktop horizontal layout */
-@media (min-width: 769px) {
-  .service-detail-card {
-    display: grid;
-    grid-template-columns: 40px 160px 1fr 210px;
-    grid-template-rows: auto 1fr auto;
-    align-items: start;
-    column-gap: 2rem;
-    row-gap: 0;
-  }
-  .service-detail-card__icon {
-    grid-column: 1; grid-row: 1 / 3;
-    margin-bottom: 0;
-    align-self: start;
-    margin-top: 4px;
-  }
-  .service-detail-card__num {
-    grid-column: 2; grid-row: 1;
-    margin-bottom: 0.5rem;
-  }
-  .service-detail-card__name {
-    grid-column: 2; grid-row: 2;
-    margin-bottom: 0;
-  }
-  .service-detail-card__desc {
-    grid-column: 3; grid-row: 1 / 4;
-    margin-bottom: 0;
-    align-self: center;
-  }
-  .service-detail-card__for {
-    grid-column: 4; grid-row: 1 / 3;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .service-detail-card__price {
-    grid-column: 4; grid-row: 3;
-    border-top: 1px solid var(--border);
-    padding-top: 0.75rem;
-    margin-top: 0;
-  }
 }
 
 /* ============================================================
