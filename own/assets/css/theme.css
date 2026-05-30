@@ -2742,6 +2742,12 @@ ul, ol { list-style: none; }
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   .price-grid { grid-template-columns: 1fr; }
   .price-grid--2col { grid-template-columns: 1fr; }
+  .service-cards-grid { grid-template-columns: 1fr; }
+  .service-detail-card { padding: 1.5rem 1.25rem; }
+  .service-detail-card__name { font-size: 1.05rem; }
+  .service-detail-card__desc { font-size: 0.85rem; }
+  .service-detail-card__for { margin-top: 0; padding: 0.75rem 1rem; }
+  .service-detail-card__for-list { font-size: 0.78rem; }
   .blog-list-grid { grid-template-columns: 1fr; }
   .activity-section { grid-template-columns: 1fr; }
   .post-header { padding: 4rem 1.5rem 3rem; }
