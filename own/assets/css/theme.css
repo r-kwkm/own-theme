@@ -347,6 +347,24 @@ ul, ol { list-style: none; }
   padding: 6rem 3rem;
   position: relative;
   z-index: 2;
+  overflow: hidden;
+}
+
+.hero-left::before {
+  content: 'own.';
+  position: absolute;
+  bottom: -0.15em;
+  right: -0.05em;
+  font-family: var(--font-en);
+  font-size: clamp(10rem, 40vw, 18rem);
+  font-weight: 800;
+  color: var(--ink);
+  opacity: 0.05;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
 }
 
 .hero-eyebrow {
