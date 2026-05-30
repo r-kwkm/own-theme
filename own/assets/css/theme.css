@@ -1420,8 +1420,14 @@ ul, ol { list-style: none; }
 
   .section-header-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
 
-  /* Hero title */
+  /* Hero — コンテンツを上寄せ */
+  .hero-left { justify-content: flex-start; padding-top: 6rem; }
   .hero-title { font-size: clamp(1.6rem, 8vw, 2.4rem); }
+
+  /* CTAボタン・サブリンクを中央揃え */
+  .hero-actions  { justify-content: center; }
+  .hero-sub-note { text-align: center; }
+  .hero-sub-links { justify-content: center; }
 
   /* CTA Banner */
   .cta-banner { padding-block: 5rem; }
@@ -1482,7 +1488,7 @@ ul, ol { list-style: none; }
 @media (max-width: 480px) {
   /* Hero */
   .hero-left { padding: 4rem 1.25rem 2.5rem; }
-  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-actions { flex-direction: column; align-items: center; }
   .hero-sub-links { flex-wrap: wrap; }
 
   /* Service cards — 1列 */
