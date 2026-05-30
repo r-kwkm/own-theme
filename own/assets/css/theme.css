@@ -973,7 +973,7 @@ ul, ol { list-style: none; }
 }
 
 .step-desc {
-  font-size: 0.8rem;
+  font-size: 0.925rem;
   color: var(--muted);
   line-height: 1.8;
 }
