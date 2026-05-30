@@ -29,7 +29,7 @@ get_header(); ?>
   <section class="page-body">
     <div style="max-width:1200px;margin-inline:auto;">
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);">
+      <div class="service-cards-grid">
 
         <?php
         $services = [

@@ -1358,13 +1358,26 @@ ul, ol { list-style: none; }
 }
 
 /* ===== RESPONSIVE ===== */
+/* タッチデバイスではカスタムカーソルを非表示 */
+@media (pointer: coarse) {
+  .cursor, .cursor-ring { display: none; }
+  body { cursor: auto; }
+  .btn, .btn-primary, .btn-ghost, .btn-line,
+  .section-link, .footer-cta__btn, .footer-nav__col a,
+  .footer-legal a, .site-logo, .nav-toggle,
+  .faq-q, .service-card { cursor: pointer; }
+}
+
 @media (max-width: 768px) {
+  /* Nav */
   .site-nav { padding: 1rem 1.5rem; }
 
+  /* Hero */
   .hero { grid-template-columns: 1fr; }
   .hero-left { padding: 5rem 1.5rem 3rem; }
   .hero-right { display: none; }
 
+  /* Front page sections */
   .trouble,
   .services,
   .reasons,
@@ -1383,26 +1396,81 @@ ul, ol { list-style: none; }
 
   .section-header-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
 
+  /* CTA Banner */
+  .cta-banner { padding-block: 5rem; }
+  .cta-banner__text { font-size: 0.9rem; }
+
+  /* Footer */
   .footer-inner {
     grid-template-columns: 1fr 1fr;
     padding: 3rem 1.5rem 2.5rem;
     gap: 2.5rem;
   }
-
   .footer-brand { grid-column: 1 / -1; }
-
-  .footer-cta { grid-column: 1 / -1; }
-
+  .footer-cta   { grid-column: 1 / -1; }
   .footer-bottom {
     padding: 1.25rem 1.5rem;
     flex-direction: column;
     gap: 0.75rem;
     text-align: center;
   }
+
+  /* Page templates */
+  .page-hero { padding: 4rem 1.5rem 3rem; }
+  .page-body { padding: 4rem 1.5rem; }
+
+  .about-profile { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-profile__img { max-height: 420px; aspect-ratio: 4 / 3; }
+  .about-stats   { grid-template-columns: repeat(2, 1fr); }
+  .about-concept { padding: 4rem 1.5rem; }
+
+  .contact-grid  { grid-template-columns: 1fr; gap: 3rem; }
+
+  .price-grid       { grid-template-columns: 1fr; }
+  .price-grid--2col { grid-template-columns: 1fr; }
+
+  .service-cards-grid { grid-template-columns: 1fr; }
+
+  .blog-list-grid { grid-template-columns: 1fr; }
+
+  .activity-section { grid-template-columns: 1fr; }
+
+  .faq-q { padding: 1.25rem 1.5rem; }
+  .faq-a { padding: 0 1.5rem 1.25rem; }
+
+  /* Post */
+  .post-header  { padding: 4rem 1.5rem 3rem; }
+  .post-body    { padding: 4rem 1.5rem; }
+  .post-footer  { padding: 2.5rem 1.5rem; }
+  .post-nav     { grid-template-columns: 1fr; }
+  .related-section { padding: 4rem 1.5rem; }
+
+  /* Privacy / Tokusho */
+  .privacy-body { padding: 3rem 1.5rem 4rem; }
+  .tokusho-table th,
+  .tokusho-table td { display: block; width: 100%; }
+  .tokusho-table th { border-bottom: none; padding-bottom: 0.4rem; }
 }
 
 @media (max-width: 480px) {
+  /* Hero */
+  .hero-left { padding: 4rem 1.25rem 2.5rem; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-sub-links { flex-wrap: wrap; }
+
+  /* Service cards — 1列 */
+  .service-cards-grid { grid-template-columns: 1fr; }
+
+  /* Footer — 完全1列 */
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+
+  /* About stats — 2列維持 */
+  .about-stats { grid-template-columns: repeat(2, 1fr); }
+
+  /* FAQ padding */
+  .faq-q { padding: 1rem 1.25rem; gap: 1rem; }
+  .faq-a { padding: 0 1.25rem 1rem; }
+  .faq-a__text { padding-left: 1.5rem; }
 }
 
 /* ============================================================
@@ -1586,6 +1654,14 @@ ul, ol { list-style: none; }
 /* ============================================================
    Service Page
    ============================================================ */
+.service-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
 .service-detail-card {
   background: var(--white);
   padding: 2.5rem 2rem;
