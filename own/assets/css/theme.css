@@ -2122,6 +2122,15 @@ ul, ol { list-style: none; }
   background: var(--ink);
 }
 
+.about-concept__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-reasons { padding: 4rem 3rem; }
+
 .about-concept__title {
   font-family: var(--font-en);
   font-size: clamp(2rem, 5vw, 4rem);
@@ -2756,6 +2765,12 @@ ul, ol { list-style: none; }
   .post-nav { grid-template-columns: 1fr; }
   .related-section { padding: 4rem 1.5rem; }
   .about-concept { padding: 4rem 1.5rem; }
+  .about-concept__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .about-concept__text { color: rgba(255,255,255,0.75); }
+  .about-reasons { padding: 4rem 1.5rem; }
+  .reason-item { padding: 1.5rem 1.25rem; gap: 1rem; }
+  .reason-num { font-size: 1.75rem; }
+  .reason-desc { color: rgba(255,255,255,0.65); }
   .faq-q { padding: 1.25rem 1.5rem; }
   .faq-a { padding: 0 1.5rem 1.25rem; }
 }

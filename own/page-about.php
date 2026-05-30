@@ -67,7 +67,7 @@ get_header(); ?>
   <!-- Concept (dark) -->
   <section class="about-concept">
     <div style="max-width:1200px;margin-inline:auto;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+      <div class="about-concept__inner">
 
         <div class="reveal">
           <p class="section-num" style="color:var(--accent);">— Concept</p>
@@ -93,7 +93,7 @@ get_header(); ?>
   </section>
 
   <!-- Why Own. (reasons reuse) -->
-  <section class="reasons" style="padding:4rem 3rem;">
+  <section class="reasons about-reasons">
     <div style="max-width:1200px;margin-inline:auto;">
       <p class="section-num" style="color:var(--accent);">— Why own.</p>
       <p class="section-en" style="color:var(--muted);">Why Choose Us</p>
