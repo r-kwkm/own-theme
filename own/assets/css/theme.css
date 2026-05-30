@@ -357,14 +357,14 @@ ul, ol { list-style: none; }
   .hero-left::before {
     content: 'own.';
     position: absolute;
-    top: 50%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: var(--font-en);
-    font-size: clamp(8rem, 38vw, 16rem);
-    font-weight: 800;
-    color: var(--ink);
-    opacity: 0.06;
+    font-size: clamp(8rem, 42vw, 17rem);
+    font-weight: 700;
+    color: var(--accent);
+    opacity: 0.08;
     letter-spacing: -0.04em;
     line-height: 1;
     pointer-events: none;
@@ -1431,14 +1431,6 @@ ul, ol { list-style: none; }
 
   /* モバイル専用改行 */
   .sp-br { display: block; }
-
-  /* ウォーターマークをボタンと被らない下部へ */
-  .hero-left::before {
-    top: auto;
-    bottom: -0.3em;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 
   /* CTA Banner */
   .cta-banner { padding-block: 5rem; }
