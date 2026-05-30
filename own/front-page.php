@@ -32,7 +32,7 @@ get_header(); ?>
         <a href="https://line.me/R/ti/p/@000kwiaj" class="btn-line" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
       </div>
 
-      <p class="hero-sub-note">初回相談は無料。Webのことが全くわからなくても大丈夫です。</p>
+      <p class="hero-sub-note">初回相談は無料。<span class="sp-br"></span>Webのことが全くわからなくても大丈夫です。</p>
 
       <div class="hero-sub-links">
         <a href="#services" class="hero-sub-link">サービスを見る</a>
