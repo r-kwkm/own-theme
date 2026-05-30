@@ -357,10 +357,11 @@ ul, ol { list-style: none; }
   .hero-left::before {
     content: 'own.';
     position: absolute;
-    bottom: -0.15em;
-    right: -0.05em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-family: var(--font-en);
-    font-size: clamp(10rem, 40vw, 18rem);
+    font-size: clamp(8rem, 38vw, 16rem);
     font-weight: 800;
     color: var(--ink);
     opacity: 0.06;
@@ -368,6 +369,7 @@ ul, ol { list-style: none; }
     line-height: 1;
     pointer-events: none;
     user-select: none;
+    white-space: nowrap;
   }
 }
 
