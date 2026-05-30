@@ -1403,6 +1403,7 @@ ul, ol { list-style: none; }
     padding: 2.5rem 1.5rem 2rem;
   }
   .hero-right { display: none; }
+  .scroll-indicator { display: none; }
   .hero-eyebrow { margin-bottom: 1.5rem; }
   .hero-title { font-size: clamp(1.6rem, 8vw, 2.4rem); margin-bottom: 1.25rem; }
   .hero-desc { font-size: 0.95rem; margin-bottom: 2.25rem; }
