@@ -1444,7 +1444,7 @@ ul, ol { list-style: none; }
     gap: 2.5rem;
   }
   .footer-brand { grid-column: 1 / -1; }
-  .footer-cta   { grid-column: 1 / -1; }
+  .footer-cta   { display: none; }
   .footer-bottom {
     padding: 1.25rem 1.5rem;
     flex-direction: column;
