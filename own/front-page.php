@@ -137,7 +137,7 @@ get_header(); ?>
           'num'  => '01',
           'name' => 'Web制作',
           'desc' => '集客できるWordPressサイトをSEO設計込みで制作。作って終わりじゃなく、育てるサイトを。',
-          'price'=> '30万円〜',
+          'price'=> '15万円〜',
         ],
         [
           'icon' => '<svg viewBox="0 0 40 40" fill="none"><circle cx="18" cy="18" r="11" stroke="#1a1a1a" stroke-width="1.5"/><path d="M26 26l6 6" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
