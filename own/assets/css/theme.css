@@ -1403,12 +1403,12 @@ ul, ol { list-style: none; }
     padding: 2.5rem 1.5rem 3rem;
   }
   .hero-right { display: none; }
-  .hero-eyebrow { margin-bottom: 1rem; }
-  .hero-title { font-size: clamp(1.6rem, 8vw, 2.4rem); margin-bottom: 1rem; }
-  .hero-desc { font-size: 0.95rem; margin-bottom: 1.75rem; }
+  .hero-eyebrow { margin-bottom: 1.5rem; }
+  .hero-title { font-size: clamp(1.6rem, 8vw, 2.4rem); margin-bottom: 1.25rem; }
+  .hero-desc { font-size: 0.95rem; margin-bottom: 2.25rem; }
   .hero-actions  { justify-content: center; }
-  .hero-sub-note { text-align: center; margin-top: 0.75rem; }
-  .hero-sub-links { justify-content: center; margin-top: 0.5rem; }
+  .hero-sub-note { text-align: center; margin-top: 1rem; }
+  .hero-sub-links { justify-content: center; margin-top: 0.75rem; }
 
   /* モバイル専用改行 */
   .sp-br { display: block; }
@@ -1490,7 +1490,7 @@ ul, ol { list-style: none; }
 
 @media (max-width: 480px) {
   /* Hero */
-  .hero-left { padding: 2rem 1.25rem 2.5rem; }
+  .hero-left { padding: 2rem 1.25rem 3rem; }
   .hero-actions { flex-direction: column; align-items: center; }
   .hero-actions .btn-primary,
   .hero-actions .btn-line { width: 100%; justify-content: center; }
