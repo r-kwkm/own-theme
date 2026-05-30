@@ -69,13 +69,13 @@ get_header(); ?>
       <div class="reveal">
         <p class="section-num" style="color:var(--accent);">— Message</p>
         <h2 class="about-concept__title" style="font-size:clamp(1.75rem,3.5vw,3rem);">
-          ビジネスの力で、<br>
-          <span>小さな命を守る。</span>
+          Webの力で、<br>
+          <span>活動を広める。</span>
         </h2>
         <div class="about-concept__text">
-          <p>own. という名前には「自分のものにする」という意味があります。</p>
-          <p>自分のビジネスを、自分の生き方を、そして社会をーー少しずつ自分たちのものにしていきたい。</p>
-          <p>Webの仕事を通じて得た収益の一部を、保護猫活動への支援に充てています。売上が上がれば、それだけ多くの猫を助けられる。そんな循環を作ることが、own.の目標のひとつです。</p>
+          <p>保護猫活動は、知られなければ広がらない。どれだけ真剣に取り組んでいても、届かなければ意味がない。</p>
+          <p>own. は、Webサイトの制作・SEO設計を通じて、保護猫団体「ohana」の活動をより多くの人に届けることをサポートしています。</p>
+          <p>Webの力で「知ってもらう」仕組みをつくること。それが、own.にできる社会への貢献です。</p>
         </div>
       </div>
     </div>
