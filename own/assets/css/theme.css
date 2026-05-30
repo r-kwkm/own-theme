@@ -1404,12 +1404,12 @@ ul, ol { list-style: none; }
   }
   .hero-right { display: none; }
   .scroll-indicator { display: none; }
-  .hero-eyebrow { margin-bottom: 1.5rem; }
-  .hero-title { font-size: clamp(1.6rem, 8vw, 2.4rem); margin-bottom: 1.25rem; }
-  .hero-desc { font-size: 0.95rem; margin-bottom: 2.25rem; }
+  .hero-eyebrow { margin-bottom: 2rem; }
+  .hero-title { font-size: clamp(1.6rem, 8vw, 2.4rem); margin-bottom: 2rem; }
+  .hero-desc { font-size: 0.95rem; margin-bottom: 3rem; }
   .hero-actions  { justify-content: center; }
-  .hero-sub-note { text-align: center; margin-top: 1rem; }
-  .hero-sub-links { justify-content: center; margin-top: auto; padding-top: 0.75rem; }
+  .hero-sub-note { text-align: center; margin-top: 1.5rem; }
+  .hero-sub-links { justify-content: center; margin-top: auto; padding-top: 1.25rem; }
 
   /* モバイル専用改行 */
   .sp-br { display: block; }
