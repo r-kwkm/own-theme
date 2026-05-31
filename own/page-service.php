@@ -115,7 +115,7 @@ get_header(); ?>
     <div style="max-width:1200px;margin-inline:auto;">
       <p class="section-num">— Process</p>
       <p class="section-en">How It Works</p>
-      <p class="section-ja">進め方</p>
+      <h2 class="section-ja">進め方</h2>
       <div class="process-steps">
         <?php
         $steps = [

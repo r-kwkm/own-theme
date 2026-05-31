@@ -5,7 +5,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'OWN_VERSION', '2.2.7' );
+define( 'OWN_VERSION', '2.3.0' );
 define( 'OWN_DIR', get_template_directory() );
 define( 'OWN_URI', get_template_directory_uri() );
 
@@ -288,6 +288,60 @@ function own_structured_data(): void {
     }
 }
 add_action( 'wp_head', 'own_structured_data' );
+
+/* ============================================================
+   Thanks Page — noindex
+   ============================================================ */
+function own_thanks_noindex(): void {
+    if ( is_page( 'thanks' ) ) {
+        echo '<meta name="robots" content="noindex, nofollow">' . "\n";
+    }
+}
+add_action( 'wp_head', 'own_thanks_noindex', 1 );
+
+/* ============================================================
+   Service Schema (JSON-LD)
+   ============================================================ */
+function own_service_schema(): void {
+    if ( ! is_page( 'service' ) ) return;
+
+    $site_url = 'https://ownweb.jp';
+    $services = [
+        [ 'name' => 'ホームページ制作', 'description' => '集客できるWordPressサイトをSEO設計込みで制作。鳥取の中小企業・個人事業主向けに、ターゲット・キーワード・構成を整理した上でデザイン・構築します。', 'price' => '150000' ],
+        [ 'name' => 'SEO対策',         'description' => 'サイト診断・キーワード選定・内部対策・コンテンツ改善・月次レポートまで一貫対応。Googleで上位に出るための仕組みを構築します。',             'price' => '50000' ],
+        [ 'name' => 'MEO対策',         'description' => 'Googleマップ・Googleビジネスプロフィールの最適化で、地域のお客さんに見つけてもらう仕組みを作ります。',                                     'price' => '50000' ],
+        [ 'name' => 'サイト保守・顧問', 'description' => 'プラグイン更新・バックアップ・セキュリティ対策・文章修正など、運用まわりを丸ごとサポートします。',                                            'price' => '30000' ],
+        [ 'name' => 'コンテンツ制作',   'description' => '検索意図を踏まえた構成・執筆・入稿まで一貫対応。SEOに効くブログ記事で長期的に集客できるコンテンツ資産を積み上げます。',                    'price' => '30000' ],
+    ];
+
+    $schema = [
+        '@context' => 'https://schema.org',
+        '@type'    => 'ItemList',
+        'name'     => 'own. サービス一覧',
+        'url'      => $site_url . '/service/',
+        'itemListElement' => array_map( function( $i, $svc ) use ( $site_url ) {
+            return [
+                '@type'    => 'ListItem',
+                'position' => $i + 1,
+                'item'     => [
+                    '@type'       => 'Service',
+                    'name'        => $svc['name'],
+                    'description' => $svc['description'],
+                    'provider'    => [ '@id' => $site_url . '/#organization' ],
+                    'areaServed'  => '鳥取県',
+                    'offers'      => [
+                        '@type'         => 'Offer',
+                        'price'         => $svc['price'],
+                        'priceCurrency' => 'JPY',
+                    ],
+                ],
+            ];
+        }, array_keys( $services ), $services ),
+    ];
+
+    echo '<script type="application/ld+json">' . wp_json_encode( $schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
+}
+add_action( 'wp_head', 'own_service_schema' );
 
 /* ============================================================
    Performance / Security

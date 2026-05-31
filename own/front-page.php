@@ -87,7 +87,7 @@ get_header(); ?>
   <section class="trouble">
     <p class="section-num">— 01 / Trouble</p>
     <p class="section-en">Any of these sound familiar?</p>
-    <p class="section-ja">こんなお悩みありませんか？</p>
+    <h2 class="section-ja">こんなお悩みありませんか？</h2>
 
     <div class="trouble-grid">
       <?php
@@ -119,7 +119,7 @@ get_header(); ?>
       <div>
         <p class="section-num">— 02 / Services</p>
         <p class="section-en">What We Do</p>
-        <p class="section-ja" style="margin-bottom:0;">提供サービス</p>
+        <h2 class="section-ja" style="margin-bottom:0;">提供サービス</h2>
       </div>
       <a href="<?php echo esc_url( home_url( '/service' ) ); ?>" class="section-link">
         すべて見る
@@ -198,7 +198,7 @@ get_header(); ?>
   <section class="reasons" id="about">
     <p class="section-num" style="color:var(--accent);">— 03 / Why own.</p>
     <p class="section-en">Why Choose Us</p>
-    <p class="section-ja" style="color:var(--white);margin-bottom:0;">選ばれる理由</p>
+    <h2 class="section-ja" style="color:var(--white);margin-bottom:0;">選ばれる理由</h2>
 
     <div class="reasons-grid">
       <?php
@@ -228,7 +228,7 @@ get_header(); ?>
   <section class="process" id="process">
     <p class="section-num">— 04 / Process</p>
     <p class="section-en">How It Works</p>
-    <p class="section-ja">進め方</p>
+    <h2 class="section-ja">進め方</h2>
 
     <div class="process-steps">
       <?php
@@ -266,7 +266,7 @@ get_header(); ?>
       <div>
         <p class="section-num">— 05 / Blog</p>
         <p class="section-en">Latest Insights</p>
-        <p class="section-ja" style="margin-bottom:0;">最新のブログ記事</p>
+        <h2 class="section-ja" style="margin-bottom:0;">最新のブログ記事</h2>
       </div>
     </div>
 
@@ -284,7 +284,7 @@ get_header(); ?>
       <div>
         <p class="section-num">— 06 / FAQ</p>
         <p class="section-en">Quick Answers</p>
-        <p class="section-ja" style="margin-bottom:0;">よくある質問</p>
+        <h2 class="section-ja" style="margin-bottom:0;">よくある質問</h2>
       </div>
       <a href="<?php echo esc_url( home_url( '/faq' ) ); ?>" class="section-link">
         すべて見る

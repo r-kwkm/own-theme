@@ -32,11 +32,11 @@ get_header(); ?>
       <div style="margin-bottom:4rem;">
         <p class="section-num">— 01</p>
         <p class="section-en">Web Design</p>
-        <p class="section-ja" style="margin-bottom:2rem;">Webサイト制作</p>
+        <h2 class="section-ja" style="margin-bottom:2rem;">Webサイト制作</h2>
 
         <div class="price-grid reveal">
           <div class="price-card">
-            <p class="price-card__name">ミニマムサイト</p>
+            <h3 class="price-card__name">ミニマムサイト</h3>
             <p class="price-card__concept">まず、URLを持つところから。</p>
             <p class="price-card__price">15<span style="font-size:1rem;font-weight:500;">万円〜</span></p>
             <p class="price-card__unit">税込 16.5万円〜 / 一括</p>
@@ -53,7 +53,7 @@ get_header(); ?>
           </div>
 
           <div class="price-card">
-            <p class="price-card__name">スモールサイト</p>
+            <h3 class="price-card__name">スモールサイト</h3>
             <p class="price-card__concept">まず、ちゃんと存在するサイトを。</p>
             <p class="price-card__price">30<span style="font-size:1rem;font-weight:500;">万円〜</span></p>
             <p class="price-card__unit">税込 33万円〜 / 一括</p>
@@ -73,7 +73,7 @@ get_header(); ?>
 
           <div class="price-card price-card--featured">
             <p class="price-card__badge">Most Popular</p>
-            <p class="price-card__name">スタンダードサイト</p>
+            <h3 class="price-card__name">スタンダードサイト</h3>
             <p class="price-card__concept" style="color:rgba(255,255,255,0.6);">狙ったキーワードで、上位を取りにいく。</p>
             <p class="price-card__price">50<span style="font-size:1rem;font-weight:500;">万円〜</span></p>
             <p class="price-card__unit">税込 55万円〜 / 一括</p>
@@ -97,11 +97,11 @@ get_header(); ?>
       <div style="margin-bottom:4rem;">
         <p class="section-num">— 02</p>
         <p class="section-en">SEO / MEO</p>
-        <p class="section-ja" style="margin-bottom:2rem;">SEO・MEO対策</p>
+        <h2 class="section-ja" style="margin-bottom:2rem;">SEO・MEO対策</h2>
 
         <div class="price-grid price-grid--2col reveal">
           <div class="price-card">
-            <p class="price-card__name">SEO対策（月次）</p>
+            <h3 class="price-card__name">SEO対策（月次）</h3>
             <p class="price-card__price">5<span style="font-size:1rem;font-weight:500;">万円〜</span></p>
             <p class="price-card__unit">税込 5.5万円〜 / 月</p>
             <div class="price-card__divider"></div>
@@ -116,7 +116,7 @@ get_header(); ?>
           </div>
 
           <div class="price-card">
-            <p class="price-card__name">MEO対策（初期設定）</p>
+            <h3 class="price-card__name">MEO対策（初期設定）</h3>
             <p class="price-card__price">5<span style="font-size:1rem;font-weight:500;">万円〜</span></p>
             <p class="price-card__unit">税込 5.5万円〜 / 一括</p>
             <div class="price-card__divider"></div>
@@ -135,11 +135,11 @@ get_header(); ?>
       <div style="margin-bottom:4rem;">
         <p class="section-num">— 03</p>
         <p class="section-en">Maintenance / Others</p>
-        <p class="section-ja" style="margin-bottom:2rem;">保守・その他</p>
+        <h2 class="section-ja" style="margin-bottom:2rem;">保守・その他</h2>
 
         <div class="price-grid reveal">
           <div class="price-card">
-            <p class="price-card__name">保守・顧問プラン</p>
+            <h3 class="price-card__name">保守・顧問プラン</h3>
             <p class="price-card__price">3<span style="font-size:1rem;font-weight:500;">万円</span></p>
             <p class="price-card__unit">税込 3.3万円 / 月</p>
             <div class="price-card__divider"></div>
@@ -152,7 +152,7 @@ get_header(); ?>
           </div>
 
           <div class="price-card">
-            <p class="price-card__name">コンテンツ制作</p>
+            <h3 class="price-card__name">コンテンツ制作</h3>
             <p class="price-card__price">3<span style="font-size:1rem;font-weight:500;">万円〜</span></p>
             <p class="price-card__unit">税込 3.3万円〜 / 本</p>
             <div class="price-card__divider"></div>
@@ -166,7 +166,7 @@ get_header(); ?>
           </div>
 
           <div class="price-card">
-            <p class="price-card__name">スポット相談・修正</p>
+            <h3 class="price-card__name">スポット相談・修正</h3>
             <p class="price-card__price" style="font-size:1.5rem;">要相談</p>
             <p class="price-card__unit">お気軽にどうぞ</p>
             <div class="price-card__divider"></div>
