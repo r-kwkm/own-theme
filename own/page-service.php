@@ -40,6 +40,7 @@ get_header(); ?>
             'desc'  => '集客できるWordPressサイトをSEO設計込みで制作。ターゲット・目的・キーワードを整理した上でデザイン・構築。公開後の運用まで見据えたサイト設計を行います。',
             'for'   => ['新規でホームページを作りたい方', 'リニューアルを検討している方', '自分で更新できるサイトが欲しい方'],
             'price' => '15万円〜',
+            'link'  => home_url('/service/web/'),
           ],
           [
             'icon'  => '<svg viewBox="0 0 40 40" fill="none"><circle cx="18" cy="18" r="11" stroke="#1a1a1a" stroke-width="1.5"/><path d="M26 26l6 6" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
@@ -48,6 +49,7 @@ get_header(); ?>
             'desc'  => 'サイト診断・キーワード選定・内部対策・コンテンツ改善・月次レポートまで。Googleで上位に出るための仕組みを、地道に・確実に構築します。',
             'for'   => ['Googleからの流入を増やしたい方', '既存サイトを活かして集客したい方', 'ブログ・コンテンツを強化したい方'],
             'price' => '5万円〜 / 月',
+            'link'  => home_url('/service/seo/'),
           ],
           [
             'icon'  => '<svg viewBox="0 0 40 40" fill="none"><path d="M20 8C14 8 9 13 9 19c0 4 2 7.5 5 9.5V32h12v-3.5c3-2 5-5.5 5-9.5 0-6-5-11-11-11z" stroke="#1a1a1a" stroke-width="1.5"/><path d="M14 32h12" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
@@ -56,6 +58,7 @@ get_header(); ?>
             'desc'  => 'Googleマップ・Googleビジネスプロフィールの最適化で、地域のお客さんに見つけてもらう仕組みを作ります。',
             'for'   => ['飲食店・美容室など地域密着の店舗', '「地名＋業種」で検索上位を狙いたい方', 'Googleマップの口コミを増やしたい方'],
             'price' => '5万円〜',
+            'link'  => home_url('/service/meo/'),
           ],
           [
             'icon'  => '<svg viewBox="0 0 40 40" fill="none"><path d="M20 6L8 12v10c0 7 5.5 13 12 14 6.5-1 12-7 12-14V12L20 6z" stroke="#1a1a1a" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 20l4 4 8-8" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -64,6 +67,7 @@ get_header(); ?>
             'desc'  => 'サイトのプラグイン更新・バックアップ・セキュリティ対策・文章修正など、運用まわりを丸ごとお任せいただけます。',
             'for'   => ['サイトの管理が手間に感じている方', '定期的な更新をお願いしたい方', 'トラブル時にすぐ相談できる人が欲しい方'],
             'price' => '3万円 / 月',
+            'link'  => home_url('/service/maintenance/'),
           ],
           [
             'icon'  => '<svg viewBox="0 0 40 40" fill="none"><path d="M8 10h24M8 16h18M8 22h20M8 28h14" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
@@ -72,6 +76,7 @@ get_header(); ?>
             'desc'  => '検索意図を踏まえた構成・執筆・入稿まで一貫対応。SEOに効くブログ記事で、長期的に集客できるコンテンツ資産を積み上げます。',
             'for'   => ['ブログを書く時間がない方', 'どんな記事を書けばいいかわからない方', 'コンテンツSEOで流入を増やしたい方'],
             'price' => '3万円 / 本',
+            'link'  => home_url('/service/content/'),
           ],
           [
             'icon'  => '<svg viewBox="0 0 40 40" fill="none"><rect x="8" y="12" width="24" height="18" rx="2" stroke="#1a1a1a" stroke-width="1.5"/><path d="M14 20h12M14 25h8M20 8v4" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
@@ -80,13 +85,16 @@ get_header(); ?>
             'desc'  => '「Googleで出てこない」「ちょっとだけ文章を直したい」「何から始めればいいかわからない」—— そんな小さな悩みでも、まずお気軽にどうぞ。',
             'for'   => ['何をすればいいか迷っている方', 'ちょっとした修正をお願いしたい方', 'まず話を聞いてほしい方'],
             'price' => '初回相談 無料',
+            'link'  => home_url('/service/contact/'),
           ],
         ];
 
         foreach ( $services as $i => $svc ) :
           $delay = $i * 0.1;
+          $tag   = $svc['link'] ? 'a' : 'div';
+          $attrs = $svc['link'] ? ' href="' . esc_url( $svc['link'] ) . '"' : '';
         ?>
-          <div class="service-detail-card reveal" style="transition-delay:<?php echo $delay; ?>s">
+          <<?php echo $tag . $attrs; ?> class="service-detail-card reveal" style="transition-delay:<?php echo $delay; ?>s">
             <div class="service-detail-card__icon"><?php echo $svc['icon']; ?></div>
             <p class="service-detail-card__num"><?php echo esc_html( $svc['num'] ); ?></p>
             <p class="service-detail-card__name"><?php echo esc_html( $svc['name'] ); ?></p>
@@ -102,7 +110,7 @@ get_header(); ?>
             </div>
 
             <p class="service-detail-card__price"><?php echo esc_html( $svc['price'] ); ?></p>
-          </div>
+          </<?php echo $tag; ?>>
         <?php endforeach; ?>
 
       </div>
