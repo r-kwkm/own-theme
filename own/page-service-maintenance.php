@@ -335,7 +335,7 @@ get_header(); ?>
   <section class="cta-banner">
     <div class="cta-banner__inner">
       <p class="cta-banner__eyebrow">Maintenance</p>
-      <h2 class="cta-banner__title cta-banner__title--ja">サイトのこと気軽に相談してください。</h2>
+      <h2 class="cta-banner__title cta-banner__title--ja">サイトのこと<br class="sp-br">気軽に相談してください。</h2>
       <p class="cta-banner__text">
         「これ聞いていいのかな」くらいの話でも大丈夫です。<br>まず話すだけでOK。
       </p>

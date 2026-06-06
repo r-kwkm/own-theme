@@ -372,7 +372,7 @@ get_header(); ?>
   <section class="cta-banner">
     <div class="cta-banner__inner">
       <p class="cta-banner__eyebrow">Web Design</p>
-      <h2 class="cta-banner__title cta-banner__title--ja">あなたのお店に合ったサイトを一緒に考えます。</h2>
+      <h2 class="cta-banner__title cta-banner__title--ja">あなたのお店に合ったサイトを<br class="sp-br">一緒に考えます。</h2>
       <p class="cta-banner__text">
         どんなイメージでも大丈夫です。<br>ふんわりした段階から一緒に整理します。初回相談は無料。
       </p>

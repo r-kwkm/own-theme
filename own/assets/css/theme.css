@@ -1123,6 +1123,8 @@ ul, ol { list-style: none; }
   margin-bottom: 2rem;
 }
 
+br.sp-br { display: none; }
+
 .cta-banner__title--ja {
   font-family: var(--font-ja);
   font-size: clamp(1.6rem, 3vw, 2.8rem);
@@ -1427,7 +1429,7 @@ ul, ol { list-style: none; }
   .hero-sub-links { justify-content: center; margin-top: auto; padding-top: 1.25rem; }
 
   /* モバイル専用改行 */
-  .sp-br { display: block; }
+  br.sp-br { display: block; }
 
   /* Front page sections */
   .trouble,
@@ -1450,6 +1452,13 @@ ul, ol { list-style: none; }
 
   /* CTA Banner */
   .cta-banner { padding-block: 5rem; }
+  .cta-banner__inner { padding-inline: 1.5rem; }
+  .cta-banner__title { font-size: clamp(2rem, 8vw, 3rem); }
+  .cta-banner__title--ja {
+    font-size: clamp(1.4rem, 5.5vw, 2rem);
+    white-space: normal;
+    line-height: 1.5;
+  }
   .cta-banner__text { font-size: 0.9rem; }
   .cta-banner .btn--primary {
     width: 100%;

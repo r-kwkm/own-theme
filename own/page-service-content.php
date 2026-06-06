@@ -323,7 +323,7 @@ get_header(); ?>
   <section class="cta-banner">
     <div class="cta-banner__inner">
       <p class="cta-banner__eyebrow">Content</p>
-      <h2 class="cta-banner__title cta-banner__title--ja">まず、どんな記事が必要か話しませんか。</h2>
+      <h2 class="cta-banner__title cta-banner__title--ja">まず、どんな記事が<br class="sp-br">必要か話しませんか。</h2>
       <p class="cta-banner__text">
         キーワードが決まっていなくても大丈夫です。<br>一緒に考えます。
       </p>
