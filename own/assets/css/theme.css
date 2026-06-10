@@ -2883,7 +2883,6 @@ a.service-detail-card:hover .service-detail-card__name { color: var(--accent-dar
   line-height: 1.7;
   max-width: none;
   margin-bottom: 2.5rem;
-  white-space: nowrap;
 }
 
 /* 4-col services grid (features section) */
@@ -3026,15 +3025,24 @@ a.service-detail-card:hover .service-detail-card__name { color: var(--accent-dar
 }
 
 /* Responsive — service individual pages */
+@media (max-width: 1200px) {
+  .cta-banner__title--ja {
+    white-space: normal;
+    text-wrap: balance;
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  }
+}
+
 @media (max-width: 1024px) {
   .services-grid--4col { grid-template-columns: repeat(2, 1fr); }
   .reasons-grid--3col  { grid-template-columns: repeat(2, 1fr); }
+  .sv-fv__title { white-space: normal; }
 }
 
 @media (max-width: 768px) {
   .sv-fv { padding: calc(72px + 3rem) 1.5rem 3.5rem; }
-  .sv-fv__title { font-size: clamp(1.3rem, 5vw, 1.8rem); white-space: normal; }
-  .sv-fv__sub { font-size: 0.85rem; white-space: normal; line-height: 1.8; }
+  .sv-fv__title { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+  .sv-fv__sub { font-size: 0.85rem; line-height: 1.8; }
   .services-grid--4col { grid-template-columns: repeat(2, 1fr); }
   .reasons-grid--3col  { grid-template-columns: 1fr; }
   .sv-related-grid     { grid-template-columns: 1fr; }
