@@ -1131,7 +1131,7 @@ br.sp-br { display: none; }
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.3;
-  white-space: nowrap;
+  text-wrap: balance;
 }
 
 .cta-banner__text {
@@ -2874,7 +2874,7 @@ a.service-detail-card:hover .service-detail-card__name { color: var(--accent-dar
   letter-spacing: -0.02em;
   color: var(--white);
   margin-bottom: 1.5rem;
-  white-space: nowrap;
+  text-wrap: balance;
 }
 
 .sv-fv__sub {
