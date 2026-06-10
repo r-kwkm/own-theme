@@ -78,7 +78,7 @@ get_header(); ?>
 
       <p class="sv-fv__eyebrow">— 04 / Maintenance</p>
 
-      <h1 class="sv-fv__title">サイトの運用、全部お任せください。</h1>
+      <h1 class="sv-fv__title">サイトの運用、<br class="sp-br">全部お任せください。</h1>
 
       <p class="sv-fv__sub">更新・セキュリティ・トラブル対応まで、あなたのサイトをずっと安全に動かし続けます。</p>
 
