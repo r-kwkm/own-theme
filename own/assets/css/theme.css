@@ -1455,8 +1455,9 @@ br.sp-br { display: none; }
   .cta-banner__inner { padding-inline: 1.5rem; }
   .cta-banner__title { font-size: clamp(2rem, 8vw, 3rem); }
   .cta-banner__title--ja {
-    font-size: clamp(1.4rem, 5.5vw, 2rem);
+    font-size: clamp(1.2rem, 4.8vw, 1.8rem);
     white-space: normal;
+    overflow-wrap: break-word;
     line-height: 1.5;
   }
   .cta-banner__text { font-size: 0.9rem; }
