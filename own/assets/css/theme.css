@@ -1455,7 +1455,7 @@ br.sp-br { display: none; }
   .cta-banner__inner { padding-inline: 1.5rem; }
   .cta-banner__title { font-size: clamp(2rem, 8vw, 3rem); }
   .cta-banner__title--ja {
-    font-size: clamp(1.2rem, 4.8vw, 1.8rem);
+    font-size: clamp(1.35rem, 5.5vw, 1.9rem);
     white-space: normal;
     text-wrap: wrap;
     overflow-wrap: break-word;
@@ -3043,7 +3043,7 @@ a.service-detail-card:hover .service-detail-card__name { color: var(--accent-dar
 
 @media (max-width: 768px) {
   .sv-fv { padding: calc(72px + 3rem) 1.5rem 3.5rem; }
-  .sv-fv__title { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+  .sv-fv__title { font-size: clamp(1.5rem, 6vw, 2.2rem); }
   .sv-fv__sub { font-size: 0.85rem; line-height: 1.8; }
   .services-grid--4col { grid-template-columns: repeat(2, 1fr); }
   .reasons-grid--3col  { grid-template-columns: 1fr; }
