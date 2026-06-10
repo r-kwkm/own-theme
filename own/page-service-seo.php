@@ -70,7 +70,7 @@ get_header(); ?>
 
       <p class="sv-fv__eyebrow">— 02 / SEO</p>
 
-      <h1 class="sv-fv__title">検索から毎月お客さんが来る仕組みを。</h1>
+      <h1 class="sv-fv__title">検索から毎月お客さんが<br class="sp-br">来る仕組みを。</h1>
 
       <p class="sv-fv__sub">広告費をかけなくても、Googleで上位に表示され続けるSEOの仕組みを鳥取の事業者向けに構築します。</p>
 
