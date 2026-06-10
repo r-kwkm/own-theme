@@ -1457,6 +1457,7 @@ br.sp-br { display: none; }
   .cta-banner__title--ja {
     font-size: clamp(1.2rem, 4.8vw, 1.8rem);
     white-space: normal;
+    text-wrap: wrap;
     overflow-wrap: break-word;
     line-height: 1.5;
   }
