@@ -343,9 +343,9 @@ get_header(); ?>
   <section class="cta-banner">
     <div class="cta-banner__inner">
       <p class="cta-banner__eyebrow">MEO</p>
-      <h2 class="cta-banner__title cta-banner__title--ja">まずはあなたのGoogleマップを一緒に見てみませんか。</h2>
+      <h2 class="cta-banner__title cta-banner__title--ja">まずはあなたのGoogleマップを<br class="sp-br">一緒に見てみませんか。</h2>
       <p class="cta-banner__text">
-        現状のGoogleビジネスプロフィールをざっと確認してお伝えします。<br>初回相談は無料です。
+        現状のGoogleビジネスプロフィールをざっと確認してお伝えします。初回相談は無料です。
       </p>
       <a href="<?php echo esc_url( home_url('/contact') ); ?>" class="btn btn--primary">
         無料相談をする

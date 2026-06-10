@@ -325,7 +325,7 @@ get_header(); ?>
       <p class="cta-banner__eyebrow">SEO</p>
       <h2 class="cta-banner__title cta-banner__title--ja">まずは今のサイトを<br class="sp-br">分析してみませんか。</h2>
       <p class="cta-banner__text">
-        何が問題で、何から手をつければいいか。<br>無料相談でざっくりお伝えします。
+        何が問題で、何から手をつければいいか。無料相談でざっくりお伝えします。
       </p>
       <a href="<?php echo esc_url( home_url('/contact') ); ?>" class="btn btn--primary">
         無料相談をする

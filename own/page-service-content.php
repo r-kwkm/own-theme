@@ -325,7 +325,7 @@ get_header(); ?>
       <p class="cta-banner__eyebrow">Content</p>
       <h2 class="cta-banner__title cta-banner__title--ja">まず、どんな記事が<br class="sp-br">必要か話しませんか。</h2>
       <p class="cta-banner__text">
-        キーワードが決まっていなくても大丈夫です。<br>一緒に考えます。
+        キーワードが決まっていなくても大丈夫です。一緒に考えます。
       </p>
       <a href="<?php echo esc_url( home_url('/contact') ); ?>" class="btn btn--primary">
         無料相談をする

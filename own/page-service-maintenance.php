@@ -337,7 +337,7 @@ get_header(); ?>
       <p class="cta-banner__eyebrow">Maintenance</p>
       <h2 class="cta-banner__title cta-banner__title--ja">サイトのこと<br class="sp-br">気軽に相談してください。</h2>
       <p class="cta-banner__text">
-        「これ聞いていいのかな」くらいの話でも大丈夫です。<br>まず話すだけでOK。
+        「これ聞いていいのかな」くらいの話でも大丈夫です。まず話すだけでOK。
       </p>
       <a href="<?php echo esc_url( home_url('/contact') ); ?>" class="btn btn--primary">
         無料相談をする
