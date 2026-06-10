@@ -3047,6 +3047,7 @@ a.service-detail-card:hover .service-detail-card__name { color: var(--accent-dar
   .sv-fv__sub { font-size: 0.85rem; line-height: 1.8; }
   .services-grid--4col { grid-template-columns: repeat(2, 1fr); }
   .reasons-grid--3col  { grid-template-columns: 1fr; }
+  .process-steps--3col { grid-template-columns: 1fr; }
   .sv-related-grid     { grid-template-columns: 1fr; }
 }
 

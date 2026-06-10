@@ -86,7 +86,7 @@ get_header(); ?>
 
   <!-- ② こんな相談、よくあります -->
   <section class="page-body">
-    <div style="max-width:860px;margin-inline:auto;">
+    <div style="max-width:1200px;margin-inline:auto;">
       <p class="section-num">— Examples</p>
       <p class="section-en">Common Questions</p>
       <h2 class="section-ja">こんな相談、よくあります</h2>
@@ -113,7 +113,7 @@ get_header(); ?>
 
   <!-- ③ 相談できること -->
   <section class="page-body page-body--surface">
-    <div style="max-width:860px;margin-inline:auto;">
+    <div style="max-width:1200px;margin-inline:auto;">
       <p class="section-num">— Topics</p>
       <p class="section-en">What We Can Talk About</p>
       <h2 class="section-ja">相談できること</h2>
@@ -161,7 +161,7 @@ get_header(); ?>
 
   <!-- ⑤ FAQ -->
   <section class="page-body page-body--surface">
-    <div style="max-width:860px;margin-inline:auto;">
+    <div style="max-width:1200px;margin-inline:auto;">
       <p class="section-num">— FAQ</p>
       <p class="section-en">FAQ</p>
       <h2 class="section-ja">よくある質問</h2>
@@ -223,7 +223,7 @@ get_header(); ?>
   <section class="cta-banner">
     <div class="cta-banner__inner">
       <p class="cta-banner__eyebrow">Free Consultation</p>
-      <h2 class="cta-banner__title cta-banner__title--ja" style="white-space:normal;">「これ聞いていいのかな」<br>そのくらいの話でも大丈夫です。</h2>
+      <h2 class="cta-banner__title cta-banner__title--ja">「これ聞いていいのかな」<br class="sp-br">そのくらいの話でも大丈夫です。</h2>
       <a href="<?php echo esc_url( home_url('/contact') ); ?>" class="btn btn--primary">
         無料で相談してみる
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
