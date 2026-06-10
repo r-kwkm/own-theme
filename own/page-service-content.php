@@ -70,7 +70,7 @@ get_header(); ?>
 
       <p class="sv-fv__eyebrow">— 05 / Content</p>
 
-      <h1 class="sv-fv__title">ブログで問い合わせを増やします。</h1>
+      <h1 class="sv-fv__title" style="font-size: clamp(1.2rem, 5vw, 2.8rem);">ブログで問い合わせを増やします。</h1>
 
       <p class="sv-fv__sub">検索意図を踏まえた構成・執筆・入稿まで一貫対応。SEOに効くコンテンツ資産を、一緒に積み上げます。</p>
 
