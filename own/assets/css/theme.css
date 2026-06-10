@@ -3027,7 +3027,7 @@ a.service-detail-card:hover .service-detail-card__name { color: var(--accent-dar
 }
 
 /* Responsive — service individual pages */
-@media (max-width: 1200px) {
+@media (min-width: 769px) and (max-width: 1200px) {
   .cta-banner__title--ja {
     white-space: normal;
     text-wrap: balance;
