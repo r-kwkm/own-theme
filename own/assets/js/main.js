@@ -162,12 +162,16 @@
 
   /* ===== CF7 → GA4 ===== */
   document.addEventListener('wpcf7mailsent', function (e) {
-    if (typeof gtag !== 'function') return;
-    gtag('event', 'generate_lead', {
+    var params = {
       event_category: 'contact',
       event_label:    'cf7_contact_form',
       form_id:        e.detail.contactFormId,
-    });
+    };
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', params);
+    } else if (window.dataLayer) {
+      window.dataLayer.push(Object.assign({ event: 'generate_lead' }, params));
+    }
   }, false);
 
 })();
