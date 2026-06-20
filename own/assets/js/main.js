@@ -160,4 +160,14 @@
     });
   });
 
+  /* ===== CF7 → GA4 ===== */
+  document.addEventListener('wpcf7mailsent', function (e) {
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'generate_lead', {
+      event_category: 'contact',
+      event_label:    'cf7_contact_form',
+      form_id:        e.detail.contactFormId,
+    });
+  }, false);
+
 })();
