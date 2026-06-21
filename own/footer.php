@@ -26,6 +26,7 @@
         <p class="footer-nav__heading">Menu</p>
         <ul class="footer-nav__list">
           <li><a href="<?php echo esc_url( home_url('/service') ); ?>">サービス</a></li>
+          <li><a href="<?php echo esc_url( get_post_type_archive_link( 'works' ) ); ?>">実績</a></li>
           <li><a href="<?php echo esc_url( home_url('/price') ); ?>">料金・プラン</a></li>
           <li><a href="<?php echo esc_url( home_url('/about') ); ?>">own.について</a></li>
           <li><a href="<?php echo esc_url( home_url('/blog') ); ?>">コラム</a></li>

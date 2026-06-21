@@ -84,9 +84,11 @@ get_header(); ?>
                         <?php while ( have_posts() ) : the_post(); ?>
                             <article class="work-card">
                                 <div class="work-card__thumbnail">
-                                    <?php if ( has_post_thumbnail() ) :
-                                        the_post_thumbnail( 'own-thumbnail' );
-                                    endif; ?>
+                                    <a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
+                                        <?php if ( has_post_thumbnail() ) :
+                                            the_post_thumbnail( 'own-thumbnail' );
+                                        endif; ?>
+                                    </a>
                                 </div>
                                 <div class="work-card__body">
                                     <div class="work-card__tags">

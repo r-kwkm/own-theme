@@ -46,13 +46,17 @@ wp menu item add-post "グローバルナビ" $SERVICE_ID \
 wp menu item add-post "グローバルナビ" $SERVICE_ID \
   --title="コンテンツ制作" --parent-id=$S --position=5
 
+# --- 実績 ---
+wp menu item add-custom "グローバルナビ" \
+  --title="Works" --url="$(wp option get siteurl)/works/" --position=2
+
 # --- 料金 ---
 wp menu item add-post "グローバルナビ" $PRICE_ID \
-  --title="Price" --position=2
+  --title="Price" --position=3
 
 # --- About（親） ---
 A=$(wp menu item add-post "グローバルナビ" $ABOUT_ID \
-  --title="About" --position=3 --porcelain)
+  --title="About" --position=4 --porcelain)
 
 # Aboutドロップダウン
 wp menu item add-post "グローバルナビ" $ABOUT_ID \
@@ -66,7 +70,7 @@ wp menu item add-post "グローバルナビ" $ACTIVITY_ID \
 
 # --- Blog ---
 wp menu item add-post "グローバルナビ" $BLOG_ID \
-  --title="Blog" --position=4
+  --title="Blog" --position=5
 
 # メニューをロケーションに割り当て
 wp menu location assign "グローバルナビ" global

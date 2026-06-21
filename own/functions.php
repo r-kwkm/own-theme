@@ -29,8 +29,9 @@ function own_setup() {
         'flex-width'  => true,
     ] );
 
-    add_image_size( 'own-card',   800, 450, true );
-    add_image_size( 'own-hero',  1600, 900, true );
+    add_image_size( 'own-card',      800, 450, true );
+    add_image_size( 'own-hero',     1600, 900, true );
+    add_image_size( 'own-thumbnail', 600, 338, true );
 
     register_nav_menus( [
         'global' => __( 'グローバルナビ', 'own' ),
@@ -101,8 +102,10 @@ add_action( 'init', 'own_register_post_types' );
 function own_register_taxonomies() {
     register_taxonomy( 'works_category', 'works', [
         'labels' => [
-            'name'          => __( '実績カテゴリー', 'own' ),
-            'singular_name' => __( '実績カテゴリー', 'own' ),
+            'name'          => __( 'サービス種別', 'own' ),
+            'singular_name' => __( 'サービス種別', 'own' ),
+            'add_new_item'  => __( 'サービス種別を追加', 'own' ),
+            'edit_item'     => __( 'サービス種別を編集', 'own' ),
         ],
         'hierarchical'      => true,
         'show_in_rest'      => true,
