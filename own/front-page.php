@@ -138,6 +138,7 @@ get_header(); ?>
           'name' => 'Web制作',
           'desc' => '集客できるWordPressサイトをSEO設計込みで制作。作って終わりじゃなく、育てるサイトを。',
           'price'=> '15万円〜',
+          'link' => home_url( '/service/web/' ),
         ],
         [
           'icon' => '<svg viewBox="0 0 40 40" fill="none"><circle cx="18" cy="18" r="11" stroke="#1a1a1a" stroke-width="1.5"/><path d="M26 26l6 6" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
@@ -145,6 +146,7 @@ get_header(); ?>
           'name' => 'SEO対策',
           'desc' => 'サイト診断から月次レポート・改善提案まで。Googleで上位に出るための仕組みをつくる。',
           'price'=> '5万円〜 / 月',
+          'link' => home_url( '/service/seo/' ),
         ],
         [
           'icon' => '<svg viewBox="0 0 40 40" fill="none"><path d="M20 8C14 8 9 13 9 19c0 4 2 7.5 5 9.5V32h12v-3.5c3-2 5-5.5 5-9.5 0-6-5-11-11-11z" stroke="#1a1a1a" stroke-width="1.5"/><path d="M14 32h12" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
@@ -152,6 +154,7 @@ get_header(); ?>
           'name' => 'MEO対策',
           'desc' => 'Googleマップで地域のお客さんに見つけてもらう。地元密着の集客をサポート。',
           'price'=> '5万円〜',
+          'link' => home_url( '/service/meo/' ),
         ],
         [
           'icon' => '<svg viewBox="0 0 40 40" fill="none"><path d="M20 6L8 12v10c0 7 5.5 13 12 14 6.5-1 12-7 12-14V12L20 6z" stroke="#1a1a1a" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 20l4 4 8-8" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -159,6 +162,7 @@ get_header(); ?>
           'name' => '保守・顧問',
           'desc' => 'サイトの管理・更新・セキュリティ対策まで。困ったときに頼れる存在として。',
           'price'=> '3万円 / 月',
+          'link' => home_url( '/service/maintenance/' ),
         ],
         [
           'icon' => '<svg viewBox="0 0 40 40" fill="none"><path d="M8 10h24M8 16h18M8 22h20M8 28h14" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
@@ -166,6 +170,7 @@ get_header(); ?>
           'name' => 'コンテンツ制作',
           'desc' => 'SEOに強いブログ記事の構成から執筆まで。検索で見つけてもらえるコンテンツを。',
           'price'=> '3万円 / 本',
+          'link' => home_url( '/service/content/' ),
         ],
         [
           'icon' => '<svg viewBox="0 0 40 40" fill="none"><rect x="8" y="12" width="24" height="18" rx="2" stroke="#1a1a1a" stroke-width="1.5"/><path d="M14 20h12M14 25h8M20 8v4" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
@@ -173,19 +178,22 @@ get_header(); ?>
           'name' => 'お気軽相談',
           'desc' => '「Googleで出てこない」「ちょっとだけ直したい」そんな小さなお悩みからどうぞ。',
           'price'=> 'まずは無料相談',
+          'link' => home_url( '/service/contact/' ),
         ],
       ];
 
       foreach ( $services as $i => $svc ) :
         $delay = $i * 0.1;
+        $tag   = $svc['link'] ? 'a' : 'div';
+        $attrs = $svc['link'] ? ' href="' . esc_url( $svc['link'] ) . '"' : '';
       ?>
-        <div class="service-card reveal" style="transition-delay:<?php echo $delay; ?>s">
+        <<?php echo $tag . $attrs; ?> class="service-card reveal" style="transition-delay:<?php echo $delay; ?>s">
           <div class="service-icon"><?php echo $svc['icon']; ?></div>
           <p class="service-num-label"><?php echo esc_html( $svc['num'] ); ?></p>
           <p class="service-name"><?php echo esc_html( $svc['name'] ); ?></p>
           <p class="service-desc"><?php echo esc_html( $svc['desc'] ); ?></p>
           <p class="service-price"><?php echo esc_html( $svc['price'] ); ?></p>
-        </div>
+        </<?php echo $tag; ?>>
       <?php endforeach; ?>
     </div>
 

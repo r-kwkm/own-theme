@@ -851,10 +851,14 @@ ul, ol { list-style: none; }
   padding: 2.5rem 2rem;
   transition: background 0.2s;
   cursor: none;
+  display: block;
 }
 
 .service-card:hover { background: var(--surface); }
 .service-card:hover .service-num-label { color: var(--accent); }
+
+a.service-card { color: inherit; text-decoration: none; cursor: pointer; }
+a.service-card:hover .service-name { color: var(--accent-dark); }
 
 .service-icon {
   width: 40px; height: 40px;
