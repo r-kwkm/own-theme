@@ -5,7 +5,7 @@
  */
 
 add_filter( 'pre_get_document_title', function() {
-	return 'MEO対策｜鳥取のSEO・Web制作はown.';
+	return 'MEO対策｜鳥取のSEO・ホームページ制作はown.';
 } );
 
 add_action( 'wp_head', function() { ?>
@@ -319,7 +319,7 @@ get_header(); ?>
       <div class="sv-related-grid">
         <a href="<?php echo esc_url( home_url('/service/web') ); ?>" class="sv-related-card reveal" style="transition-delay:0s">
           <p class="sv-related-card__num">01</p>
-          <p class="sv-related-card__name">Web制作</p>
+          <p class="sv-related-card__name">ホームページ制作</p>
           <p class="sv-related-card__desc">集客できるWordPressサイトをSEO設計込みで制作します。</p>
           <span class="sv-related-card__link">詳しく見る →</span>
         </a>

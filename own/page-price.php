@@ -25,7 +25,7 @@ get_header(); ?>
     </div>
   </div>
 
-  <!-- Web制作 -->
+  <!-- ホームページ制作 -->
   <section class="page-body">
     <div style="max-width:1200px;margin-inline:auto;">
 

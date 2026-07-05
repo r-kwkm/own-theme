@@ -135,7 +135,7 @@ get_header(); ?>
         [
           'icon' => '<svg viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="22" rx="2" stroke="#1a1a1a" stroke-width="1.5"/><path d="M14 34h12M20 30v4" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
           'num'  => '01',
-          'name' => 'Web制作',
+          'name' => 'ホームページ制作',
           'desc' => '集客できるWordPressサイトをSEO設計込みで制作。作って終わりじゃなく、育てるサイトを。',
           'price'=> '15万円〜',
           'link' => home_url( '/service/web/' ),
@@ -280,7 +280,7 @@ get_header(); ?>
 
     <div class="blog-coming-soon">
       <p class="blog-coming-soon__label">Coming Soon</p>
-      <p class="blog-coming-soon__text">Web制作・SEO・MEOに関するコンテンツを準備中です。<br>もうしばらくお待ちください。</p>
+      <p class="blog-coming-soon__text">ホームページ制作・SEO・MEOに関するコンテンツを準備中です。<br>もうしばらくお待ちください。</p>
     </div>
   </section>
 

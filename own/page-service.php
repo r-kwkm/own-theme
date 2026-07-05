@@ -19,7 +19,7 @@ get_header(); ?>
       <p class="page-hero__en">What We Do.</p>
       <h1 class="page-hero__ja">鳥取のホームページ制作・SEO対策・MEO対策サービス</h1>
       <p class="page-hero__lead">
-        Web制作からSEO・MEO・保守まで、ビジネスのオンライン展開を一貫してサポート。<br>
+        ホームページ制作からSEO・MEO・保守まで、ビジネスのオンライン展開を一貫してサポート。<br>
         鳥取在住だから、対面相談もリモートも対応可能です。
       </p>
     </div>
@@ -36,7 +36,7 @@ get_header(); ?>
           [
             'icon'  => '<svg viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="22" rx="2" stroke="#1a1a1a" stroke-width="1.5"/><path d="M14 34h12M20 30v4" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
             'num'   => '01',
-            'name'  => 'Web制作',
+            'name'  => 'ホームページ制作',
             'desc'  => '集客できるWordPressサイトをSEO設計込みで制作。ターゲット・目的・キーワードを整理した上でデザイン・構築。公開後の運用まで見据えたサイト設計を行います。',
             'for'   => ['新規でホームページを作りたい方', 'リニューアルを検討している方', '自分で更新できるサイトが欲しい方'],
             'price' => '15万円〜',

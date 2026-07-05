@@ -170,7 +170,7 @@ $read  = max( 1, ceil( $words / 400 ) );
       <p class="cta-banner__eyebrow">Contact</p>
       <h2 class="cta-banner__title">Let's Work<br>Together.</h2>
       <p class="cta-banner__text">
-        Web制作・SEO対策のご相談はお気軽にどうぞ。<br>
+        ホームページ制作・SEO対策のご相談はお気軽にどうぞ。<br>
         個人の方も大歓迎。初回相談は無料です。
       </p>
       <a href="<?php echo esc_url( home_url('/contact') ); ?>" class="btn btn--primary">

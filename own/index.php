@@ -25,7 +25,7 @@ get_header();
       <p class="hero-subtitle">鳥取のホームページ制作・SEO対策</p>
 
       <p class="hero-desc">
-        <?php echo nl2br( esc_html( get_theme_mod( 'own_hero_desc', "誰もが持っている、自分だけの価値がある。\nWeb制作からSEO・MEO・保守まで、\nひとりが一貫してサポートします。" ) ) ); ?>
+        <?php echo nl2br( esc_html( get_theme_mod( 'own_hero_desc', "誰もが持っている、自分だけの価値がある。\nホームページ制作からSEO・MEO・保守まで、\nひとりが一貫してサポートします。" ) ) ); ?>
       </p>
 
       <div class="hero-actions">
@@ -132,7 +132,7 @@ get_header();
         [
           'icon' => '<svg viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="22" rx="2" stroke="#1a1a1a" stroke-width="1.5"/><path d="M14 34h12M20 30v4" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>',
           'num'  => '01',
-          'name' => 'Web制作',
+          'name' => 'ホームページ制作',
           'desc' => '集客できるWordPressサイトをSEO設計込みで制作。作って終わりじゃなく、育てるサイトを。',
           'price'=> '30万円〜',
         ],

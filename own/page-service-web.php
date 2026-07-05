@@ -1,11 +1,11 @@
 <?php
 /**
- * Template Name: Service - Web制作
+ * Template Name: Service - ホームページ制作
  * page-service-web.php — Own. Theme
  */
 
 add_filter( 'pre_get_document_title', function() {
-	return 'Web制作｜鳥取のSEO・Web制作はown.';
+	return 'ホームページ制作｜鳥取のSEO・ホームページ制作はown.';
 } );
 
 add_action( 'wp_head', function() { ?>
@@ -65,7 +65,7 @@ get_header(); ?>
         <span>/</span>
         <a href="<?php echo esc_url( home_url('/service') ); ?>">Services</a>
         <span>/</span>
-        <span>Web制作</span>
+        <span>ホームページ制作</span>
       </nav>
 
       <p class="sv-fv__eyebrow">— 01 / Web Design</p>
@@ -168,7 +168,7 @@ get_header(); ?>
         $reasons = [
           [
             'num'   => '01',
-            'title' => 'SEOとWeb制作を同一人物が担当',
+            'title' => 'SEOとホームページ制作を同一人物が担当',
             'desc'  => 'デザインと集客の両方を理解した上でサイトを設計。「作ったけど誰にも見てもらえない」を防ぎます。',
           ],
           [
