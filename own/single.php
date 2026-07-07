@@ -30,13 +30,17 @@ $read  = max( 1, ceil( $words / 400 ) );
         </a>
       <?php endif; ?>
 
-      <h1 class="post-header__title"><?php the_title(); ?></h1>
+      <h1 class="post-header__title"><?php echo str_replace(
+        [ 'ーー', '|', '原因' ],
+        [ 'ーー<br>', '<br>', '<span style="white-space:nowrap;">原因</span>' ],
+        get_the_title()
+      ); ?></h1>
 
       <div class="post-header__meta">
         <time datetime="<?php echo esc_attr( get_the_date('c') ); ?>">
           <?php echo esc_html( get_the_date('Y.m.d') ); ?>
         </time>
-        <span><?php echo esc_html( $read ); ?> min read</span>
+        <span><?php echo esc_html( $read ); ?>分で読めます</span>
         <?php if ( $cats ) : ?>
           <span><?php echo esc_html( $cats[0]->name ); ?></span>
         <?php endif; ?>
@@ -46,9 +50,9 @@ $read  = max( 1, ceil( $words / 400 ) );
 
   <!-- Featured Image -->
   <?php if ( has_post_thumbnail() ) : ?>
-    <div style="max-width:1200px;margin-inline:auto;padding:0 3rem;">
+    <div style="max-width:800px;margin-inline:auto;padding:0 3rem;">
       <?php the_post_thumbnail( 'own-hero', [
-        'style' => 'width:100%;aspect-ratio:21/8;object-fit:cover;margin-top:3rem;',
+        'style' => 'width:100%;aspect-ratio:1200/630;object-fit:cover;margin-top:3rem;',
         'alt'   => get_the_title(),
       ] ); ?>
     </div>

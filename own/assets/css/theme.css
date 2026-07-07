@@ -1054,6 +1054,7 @@ a.service-card:hover .service-name { color: var(--accent-dark); }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
   transition: transform 0.5s ease;
 }
 
@@ -2605,7 +2606,6 @@ a.service-detail-card:hover .service-detail-card__name { color: var(--accent-dar
   line-height: 1.4;
   letter-spacing: -0.01em;
   margin-bottom: 1.5rem;
-  max-width: 800px;
 }
 
 .post-header__meta {
@@ -3176,10 +3176,8 @@ a.work-card__tag:hover { background: var(--accent); color: var(--white); }
   letter-spacing: 0.01em;
   margin-top: 3.5rem;
   margin-bottom: 1.25rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--border);
 }
-.entry-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+.entry-content h2:first-child { margin-top: 0; }
 .entry-content h3 {
   font-family: var(--font-ja);
   font-size: 0.9375rem;

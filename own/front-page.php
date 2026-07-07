@@ -276,12 +276,51 @@ get_header(); ?>
         <p class="section-en">Latest Insights</p>
         <h2 class="section-ja" style="margin-bottom:0;">最新のブログ記事</h2>
       </div>
+      <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="section-link">
+        すべて見る
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </a>
     </div>
 
-    <div class="blog-coming-soon">
-      <p class="blog-coming-soon__label">Coming Soon</p>
-      <p class="blog-coming-soon__text">ホームページ制作・SEO・MEOに関するコンテンツを準備中です。<br>もうしばらくお待ちください。</p>
-    </div>
+    <?php if ( $blog_query->have_posts() ) : ?>
+      <div class="blog-grid">
+        <?php $bi = 0; while ( $blog_query->have_posts() ) : $blog_query->the_post();
+          $bcats = get_the_category();
+        ?>
+          <article class="blog-card reveal" style="transition-delay:<?php echo $bi * 0.1; ?>s">
+            <a href="<?php the_permalink(); ?>">
+              <div class="blog-thumb">
+                <?php if ( has_post_thumbnail() ) :
+                  the_post_thumbnail( 'own-card', [ 'alt' => get_the_title() ] );
+                else : ?>
+                  <span>No Image</span>
+                <?php endif; ?>
+              </div>
+            </a>
+            <div class="blog-body">
+              <?php if ( $bcats ) : ?>
+                <a href="<?php echo esc_url( get_category_link( $bcats[0]->term_id ) ); ?>" class="blog-cat">
+                  <?php echo esc_html( $bcats[0]->name ); ?>
+                </a>
+              <?php endif; ?>
+              <p class="blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+              <p class="blog-date">
+                <time datetime="<?php echo esc_attr( get_the_date('c') ); ?>">
+                  <?php echo esc_html( get_the_date('Y.m.d') ); ?>
+                </time>
+              </p>
+            </div>
+          </article>
+        <?php $bi++; endwhile; wp_reset_postdata(); ?>
+      </div>
+    <?php else : ?>
+      <div class="blog-coming-soon">
+        <p class="blog-coming-soon__label">Coming Soon</p>
+        <p class="blog-coming-soon__text">ホームページ制作・SEO・MEOに関するコンテンツを準備中です。<br>もうしばらくお待ちください。</p>
+      </div>
+    <?php endif; ?>
   </section>
 
   <!-- ======================================================

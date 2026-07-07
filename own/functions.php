@@ -30,7 +30,7 @@ function own_setup() {
     ] );
 
     add_image_size( 'own-card',      800, 450, true );
-    add_image_size( 'own-hero',     1600, 900, true );
+    add_image_size( 'own-hero',     1200, 630, true );
     add_image_size( 'own-thumbnail', 600, 338, true );
 
     register_nav_menus( [
@@ -191,19 +191,48 @@ function own_pagination(): void {
 }
 
 /* ============================================================
-   OGP Image (fallback — Rank Math outputs no og:image by default)
+   Open Graph / Twitter Card
+   （SEOプラグイン未導入のため自前で出力。記事は投稿ごとのタイトル・
+     ディスクリプション・アイキャッチを、それ以外は固定のフォールバックを使用）
    ============================================================ */
-function own_ogp_image(): void {
-    $landscape = 'https://ownweb.jp/wp-content/uploads/2026/05/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8827%E6%97%A5_20_51_58_compressed.webp';
-    $square    = 'https://ownweb.jp/wp-content/uploads/2026/05/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8827%E6%97%A5_19_45_34_compressed.webp';
+function own_open_graph(): void {
+    $fallback_image  = 'https://ownweb.jp/wp-content/uploads/2026/05/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8827%E6%97%A5_20_51_58_compressed.webp';
+    $fallback_square = 'https://ownweb.jp/wp-content/uploads/2026/05/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8827%E6%97%A5_19_45_34_compressed.webp';
+    $site_desc       = '鳥取のホームページ制作・SEO対策・MEO対策。WordPressを基本に、集客できるWebサイト制作とSEO設計を一貫サポート。';
 
-    echo '<meta property="og:image" content="' . esc_url( $landscape ) . '" />' . "\n";
+    $is_post = is_singular( 'post' );
+    $title   = wp_get_document_title();
+    $type    = $is_post ? 'article' : 'website';
+    $url     = wp_get_canonical_url() ?: home_url( '/' );
+
+    $description = $site_desc;
+    if ( $is_post ) {
+        $post_desc   = get_post_meta( get_queried_object_id(), '_own_meta_description', true );
+        $description = $post_desc ?: wp_strip_all_tags( get_the_excerpt() );
+    }
+
+    $image = $fallback_image;
+    if ( $is_post && has_post_thumbnail() ) {
+        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'own-hero' );
+        if ( $thumb ) {
+            $image = $thumb[0];
+        }
+    }
+
+    echo '<meta property="og:type" content="' . esc_attr( $type ) . '" />' . "\n";
+    echo '<meta property="og:site_name" content="' . esc_attr( get_bloginfo( 'name' ) ) . '" />' . "\n";
+    echo '<meta property="og:title" content="' . esc_attr( $title ) . '" />' . "\n";
+    echo '<meta property="og:description" content="' . esc_attr( $description ) . '" />' . "\n";
+    echo '<meta property="og:url" content="' . esc_url( $url ) . '" />' . "\n";
+    echo '<meta property="og:image" content="' . esc_url( $image ) . '" />' . "\n";
     echo '<meta property="og:image:width" content="1200" />' . "\n";
     echo '<meta property="og:image:height" content="630" />' . "\n";
-    echo '<meta property="og:image:type" content="image/webp" />' . "\n";
-    echo '<meta name="twitter:image" content="' . esc_url( $square ) . '" />' . "\n";
+    echo '<meta name="twitter:card" content="summary_large_image" />' . "\n";
+    echo '<meta name="twitter:title" content="' . esc_attr( $title ) . '" />' . "\n";
+    echo '<meta name="twitter:description" content="' . esc_attr( $description ) . '" />' . "\n";
+    echo '<meta name="twitter:image" content="' . esc_url( $is_post ? $image : $fallback_square ) . '" />' . "\n";
 }
-add_action( 'wp_head', 'own_ogp_image', 5 );
+add_action( 'wp_head', 'own_open_graph', 5 );
 
 /* ============================================================
    Structured Data (JSON-LD)
@@ -345,6 +374,106 @@ function own_service_schema(): void {
     echo '<script type="application/ld+json">' . wp_json_encode( $schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
 }
 add_action( 'wp_head', 'own_service_schema' );
+
+/* ============================================================
+   Article Schema (Blog Posts)
+   ============================================================ */
+function own_article_schema(): void {
+    if ( ! is_singular( 'post' ) ) {
+        return;
+    }
+
+    $post_id  = get_queried_object_id();
+    $desc     = get_post_meta( $post_id, '_own_meta_description', true );
+    $desc     = $desc ?: wp_strip_all_tags( get_the_excerpt( $post_id ) );
+    $logo_url = 'https://ownweb.jp/wp-content/uploads/2026/05/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8827%E6%97%A5_19_45_34_compressed.webp';
+
+    $schema = [
+        '@context'         => 'https://schema.org',
+        '@type'            => 'BlogPosting',
+        'mainEntityOfPage' => [
+            '@type' => 'WebPage',
+            '@id'   => get_permalink( $post_id ),
+        ],
+        'headline'         => get_the_title( $post_id ),
+        'description'      => $desc,
+        'datePublished'    => get_the_date( 'c', $post_id ),
+        'dateModified'     => get_the_modified_date( 'c', $post_id ),
+        'author'           => [
+            '@type' => 'Organization',
+            '@id'   => 'https://ownweb.jp/#organization',
+            'name'  => 'own.',
+        ],
+        'publisher'        => [
+            '@type' => 'Organization',
+            '@id'   => 'https://ownweb.jp/#organization',
+            'name'  => 'own.',
+            'logo'  => [
+                '@type' => 'ImageObject',
+                'url'   => $logo_url,
+            ],
+        ],
+    ];
+
+    if ( has_post_thumbnail( $post_id ) ) {
+        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'own-hero' );
+        if ( $thumb ) {
+            $schema['image'] = $thumb[0];
+        }
+    }
+
+    echo '<script type="application/ld+json">' . wp_json_encode( $schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
+}
+add_action( 'wp_head', 'own_article_schema' );
+
+/* ============================================================
+   Post Meta Description (SEO plugin未導入のための簡易実装)
+   ============================================================ */
+function own_add_meta_description_box(): void {
+    add_meta_box(
+        'own_meta_description',
+        'メタディスクリプション（検索結果に表示される説明文）',
+        'own_render_meta_description_box',
+        'post',
+        'normal',
+        'high'
+    );
+}
+add_action( 'add_meta_boxes', 'own_add_meta_description_box' );
+
+function own_render_meta_description_box( WP_Post $post ): void {
+    $value = get_post_meta( $post->ID, '_own_meta_description', true );
+    wp_nonce_field( 'own_save_meta_description', 'own_meta_description_nonce' );
+    echo '<textarea name="own_meta_description" style="width:100%;" rows="3" maxlength="160">' . esc_textarea( $value ) . '</textarea>';
+    echo '<p class="description">120〜160文字程度を推奨します。未入力の場合は出力されません。</p>';
+}
+
+function own_save_meta_description( int $post_id ): void {
+    if ( ! isset( $_POST['own_meta_description_nonce'] ) || ! wp_verify_nonce( $_POST['own_meta_description_nonce'], 'own_save_meta_description' ) ) {
+        return;
+    }
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+    if ( isset( $_POST['own_meta_description'] ) ) {
+        update_post_meta( $post_id, '_own_meta_description', sanitize_textarea_field( $_POST['own_meta_description'] ) );
+    }
+}
+add_action( 'save_post', 'own_save_meta_description' );
+
+function own_output_meta_description(): void {
+    if ( ! is_singular( 'post' ) ) {
+        return;
+    }
+    $desc = get_post_meta( get_queried_object_id(), '_own_meta_description', true );
+    if ( $desc ) {
+        echo '<meta name="description" content="' . esc_attr( $desc ) . '">' . "\n";
+    }
+}
+add_action( 'wp_head', 'own_output_meta_description', 4 );
 
 /* ============================================================
    Performance / Security
