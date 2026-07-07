@@ -233,11 +233,14 @@ function own_open_graph(): void {
         echo '<meta name="twitter:description" content="' . esc_attr( $description ) . '" />' . "\n";
     }
 
-    // og:image / twitter:image はRank Math環境でも出力されないため常に出力する
-    echo '<meta property="og:image" content="' . esc_url( $image ) . '" />' . "\n";
-    echo '<meta property="og:image:width" content="1200" />' . "\n";
-    echo '<meta property="og:image:height" content="630" />' . "\n";
-    echo '<meta name="twitter:image" content="' . esc_url( $is_post ? $image : $fallback_square ) . '" />' . "\n";
+    // Rank Mathはアイキャッチがある投稿では自前でog:imageを出すため、その場合だけ譲る
+    $rank_math_handles_image = $has_seo_plugin && $is_post && has_post_thumbnail();
+    if ( ! $rank_math_handles_image ) {
+        echo '<meta property="og:image" content="' . esc_url( $image ) . '" />' . "\n";
+        echo '<meta property="og:image:width" content="1200" />' . "\n";
+        echo '<meta property="og:image:height" content="630" />' . "\n";
+        echo '<meta name="twitter:image" content="' . esc_url( $is_post ? $image : $fallback_square ) . '" />' . "\n";
+    }
 }
 add_action( 'wp_head', 'own_open_graph', 5 );
 
@@ -489,6 +492,10 @@ function own_save_meta_description( int $post_id ): void {
 add_action( 'save_post', 'own_save_meta_description' );
 
 function own_output_meta_description(): void {
+    // Rank Mathが有効な環境ではそちらがdescriptionを出力するため二重出力を避ける
+    if ( defined( 'RANK_MATH_VERSION' ) ) {
+        return;
+    }
     if ( ! is_singular( 'post' ) ) {
         return;
     }
