@@ -453,6 +453,18 @@ function own_add_meta_description_box(): void {
 }
 add_action( 'add_meta_boxes', 'own_add_meta_description_box' );
 
+function own_register_meta_description_field(): void {
+    register_post_meta( 'post', '_own_meta_description', [
+        'type'          => 'string',
+        'single'        => true,
+        'show_in_rest'  => true,
+        'auth_callback' => function() {
+            return current_user_can( 'edit_posts' );
+        },
+    ] );
+}
+add_action( 'init', 'own_register_meta_description_field' );
+
 function own_render_meta_description_box( WP_Post $post ): void {
     $value = get_post_meta( $post->ID, '_own_meta_description', true );
     wp_nonce_field( 'own_save_meta_description', 'own_meta_description_nonce' );
