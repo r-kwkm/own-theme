@@ -192,24 +192,17 @@ function own_pagination(): void {
 
 /* ============================================================
    Open Graph / Twitter Card
-   （SEOプラグイン未導入のため自前で出力。記事は投稿ごとのタイトル・
-     ディスクリプション・アイキャッチを、それ以外は固定のフォールバックを使用）
+   （Rank Math導入環境ではog:title等はRank Math側が出力するため、
+     ここではRank Mathが出力しない画像系タグのみ補完する。
+     Rank Math未導入環境（ローカル等）ではtitle/descriptionなども含めて全部出力する）
    ============================================================ */
 function own_open_graph(): void {
+    $has_seo_plugin  = defined( 'RANK_MATH_VERSION' );
     $fallback_image  = 'https://ownweb.jp/wp-content/uploads/2026/05/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8827%E6%97%A5_20_51_58_compressed.webp';
     $fallback_square = 'https://ownweb.jp/wp-content/uploads/2026/05/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8827%E6%97%A5_19_45_34_compressed.webp';
     $site_desc       = '鳥取のホームページ制作・SEO対策・MEO対策。WordPressを基本に、集客できるWebサイト制作とSEO設計を一貫サポート。';
 
     $is_post = is_singular( 'post' );
-    $title   = wp_get_document_title();
-    $type    = $is_post ? 'article' : 'website';
-    $url     = wp_get_canonical_url() ?: home_url( '/' );
-
-    $description = $site_desc;
-    if ( $is_post ) {
-        $post_desc   = get_post_meta( get_queried_object_id(), '_own_meta_description', true );
-        $description = $post_desc ?: wp_strip_all_tags( get_the_excerpt() );
-    }
 
     $image = $fallback_image;
     if ( $is_post && has_post_thumbnail() ) {
@@ -219,17 +212,31 @@ function own_open_graph(): void {
         }
     }
 
-    echo '<meta property="og:type" content="' . esc_attr( $type ) . '" />' . "\n";
-    echo '<meta property="og:site_name" content="' . esc_attr( get_bloginfo( 'name' ) ) . '" />' . "\n";
-    echo '<meta property="og:title" content="' . esc_attr( $title ) . '" />' . "\n";
-    echo '<meta property="og:description" content="' . esc_attr( $description ) . '" />' . "\n";
-    echo '<meta property="og:url" content="' . esc_url( $url ) . '" />' . "\n";
+    if ( ! $has_seo_plugin ) {
+        $title = wp_get_document_title();
+        $type  = $is_post ? 'article' : 'website';
+        $url   = wp_get_canonical_url() ?: home_url( '/' );
+
+        $description = $site_desc;
+        if ( $is_post ) {
+            $post_desc   = get_post_meta( get_queried_object_id(), '_own_meta_description', true );
+            $description = $post_desc ?: wp_strip_all_tags( get_the_excerpt() );
+        }
+
+        echo '<meta property="og:type" content="' . esc_attr( $type ) . '" />' . "\n";
+        echo '<meta property="og:site_name" content="' . esc_attr( get_bloginfo( 'name' ) ) . '" />' . "\n";
+        echo '<meta property="og:title" content="' . esc_attr( $title ) . '" />' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr( $description ) . '" />' . "\n";
+        echo '<meta property="og:url" content="' . esc_url( $url ) . '" />' . "\n";
+        echo '<meta name="twitter:card" content="summary_large_image" />' . "\n";
+        echo '<meta name="twitter:title" content="' . esc_attr( $title ) . '" />' . "\n";
+        echo '<meta name="twitter:description" content="' . esc_attr( $description ) . '" />' . "\n";
+    }
+
+    // og:image / twitter:image はRank Math環境でも出力されないため常に出力する
     echo '<meta property="og:image" content="' . esc_url( $image ) . '" />' . "\n";
     echo '<meta property="og:image:width" content="1200" />' . "\n";
     echo '<meta property="og:image:height" content="630" />' . "\n";
-    echo '<meta name="twitter:card" content="summary_large_image" />' . "\n";
-    echo '<meta name="twitter:title" content="' . esc_attr( $title ) . '" />' . "\n";
-    echo '<meta name="twitter:description" content="' . esc_attr( $description ) . '" />' . "\n";
     echo '<meta name="twitter:image" content="' . esc_url( $is_post ? $image : $fallback_square ) . '" />' . "\n";
 }
 add_action( 'wp_head', 'own_open_graph', 5 );
@@ -379,6 +386,11 @@ add_action( 'wp_head', 'own_service_schema' );
    Article Schema (Blog Posts)
    ============================================================ */
 function own_article_schema(): void {
+    // Rank Mathが有効な環境ではそちらがArticleスキーマを出力するため二重出力を避ける
+    if ( defined( 'RANK_MATH_VERSION' ) ) {
+        return;
+    }
+
     if ( ! is_singular( 'post' ) ) {
         return;
     }
