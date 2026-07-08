@@ -31,8 +31,8 @@ $read  = max( 1, ceil( $words / 400 ) );
       <?php endif; ?>
 
       <h1 class="post-header__title"><?php echo str_replace(
-        [ 'ーー', '|', '原因' ],
-        [ 'ーー<br>', '<br>', '<span style="white-space:nowrap;">原因</span>' ],
+        [ 'ーー', '|', '？', '原因' ],
+        [ 'ーー<br>', '<br>', '？<br>', '<span style="white-space:nowrap;">原因</span>' ],
         get_the_title()
       ); ?></h1>
 
