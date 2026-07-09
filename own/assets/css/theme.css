@@ -3249,7 +3249,7 @@ a.work-card__tag:hover { background: var(--accent); color: var(--white); }
   font-size: 1.05rem;
 }
 
-.article-cta__button {
+.article-cta .article-cta__button {
   display: inline-block;
   background: var(--accent);
   color: var(--ink);
@@ -3262,7 +3262,7 @@ a.work-card__tag:hover { background: var(--accent); color: var(--white); }
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.article-cta__button:hover {
+.article-cta .article-cta__button:hover {
   background: var(--ink);
   color: var(--white);
   transform: translateY(-2px);
