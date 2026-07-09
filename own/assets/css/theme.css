@@ -3237,31 +3237,39 @@ a.work-card__tag:hover { background: var(--accent); color: var(--white); }
 /* ===== 記事末尾CTA ===== */
 .article-cta {
   text-align: center;
-  margin: 32px 0;
+  margin: 40px 0;
+  padding: 32px 24px;
+  background: #EAF6F2;
+  border-radius: 16px;
 }
 
 .article-cta__lead {
-  margin: 0 0 16px;
-  font-weight: 500;
+  margin: 0 0 20px;
+  font-weight: 700;
+  font-size: 1.05rem;
 }
 
 .article-cta__button {
   display: inline-block;
   background: #04342C;
   color: #FFFFFF;
-  padding: 12px 32px;
-  border-radius: 8px;
+  padding: 18px 48px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 700;
-  transition: background 0.2s ease;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 14px rgba(4, 52, 44, 0.25);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .article-cta__button:hover {
   background: #0F6E56;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(4, 52, 44, 0.3);
 }
 
 .article-cta__note {
-  margin: 12px 0 0;
+  margin: 16px 0 0;
   font-size: 0.8rem;
   color: var(--muted);
 }
