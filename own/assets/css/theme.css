@@ -3234,6 +3234,38 @@ a.work-card__tag:hover { background: var(--accent); color: var(--white); }
   font-style: italic;
 }
 
+/* ===== 記事末尾CTA ===== */
+.article-cta {
+  text-align: center;
+  margin: 32px 0;
+}
+
+.article-cta__lead {
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+
+.article-cta__button {
+  display: inline-block;
+  background: #04342C;
+  color: #FFFFFF;
+  padding: 12px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.article-cta__button:hover {
+  background: #0F6E56;
+}
+
+.article-cta__note {
+  margin: 12px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 /* スクリーンショットプレビュー */
 .works-screenshot {
   margin: 2.5rem 0;
