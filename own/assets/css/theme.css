@@ -3272,7 +3272,7 @@ a.work-card__tag:hover { background: var(--accent); color: var(--white); }
 .article-cta__note {
   margin: 16px 0 0;
   font-size: 0.8rem;
-  color: var(--muted);
+  color: var(--ink);
 }
 
 /* スクリーンショットプレビュー */
