@@ -2165,6 +2165,16 @@ a.service-detail-card:hover .service-detail-card__name { color: var(--accent-dar
 
 .about-profile__bio p + p { margin-top: 2em; }
 
+.bio-link {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.bio-link:hover { color: var(--ink); }
+
 .about-concept {
   padding: 4rem 3rem;
   background: var(--ink);
