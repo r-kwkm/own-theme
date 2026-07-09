@@ -3251,21 +3251,22 @@ a.work-card__tag:hover { background: var(--accent); color: var(--white); }
 
 .article-cta__button {
   display: inline-block;
-  background: #04342C;
-  color: #FFFFFF;
+  background: var(--accent);
+  color: var(--ink);
   padding: 18px 48px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 700;
   font-size: 1.05rem;
-  box-shadow: 0 4px 14px rgba(4, 52, 44, 0.25);
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(61, 214, 140, 0.35);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .article-cta__button:hover {
-  background: #0F6E56;
+  background: var(--ink);
+  color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(4, 52, 44, 0.3);
+  box-shadow: 0 8px 24px rgba(61, 214, 140, 0.3);
 }
 
 .article-cta__note {
