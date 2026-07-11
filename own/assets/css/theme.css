@@ -3205,12 +3205,19 @@ a.work-card__tag:hover { background: var(--accent); color: var(--white); }
   padding-left: 0;
   margin-bottom: 1.5rem;
 }
+.entry-content ul {
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+}
 .entry-content ul > li {
   list-style: none;
   position: relative;
   padding-left: 1.25rem;
   margin-bottom: 1.25rem;
 }
+.entry-content ul > li:last-child { margin-bottom: 0; }
 .entry-content ul > li::before {
   content: '';
   position: absolute;
@@ -3227,6 +3234,33 @@ a.work-card__tag:hover { background: var(--accent); color: var(--white); }
   margin-bottom: 0.2rem;
 }
 .entry-content ol > li { list-style: decimal; padding-left: 0.25rem; margin-bottom: 0.75rem; }
+
+.entry-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 2rem;
+  font-size: 0.9rem;
+}
+.entry-content th {
+  background: var(--accent);
+  color: var(--ink);
+  font-weight: 700;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--accent);
+}
+.entry-content td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+}
+.entry-content td:first-child {
+  font-weight: 700;
+  background: var(--surface);
+  white-space: nowrap;
+}
+.entry-content tbody tr:nth-child(even) td:not(:first-child) {
+  background: var(--surface);
+}
 .entry-content strong { font-weight: 700; }
 .entry-content a {
   color: var(--accent-dark);
