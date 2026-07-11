@@ -3241,25 +3241,21 @@ a.work-card__tag:hover { background: var(--accent); color: var(--white); }
   margin: 0 0 2rem;
   font-size: 0.9rem;
 }
-.entry-content th {
-  background: var(--accent);
-  color: var(--ink);
-  font-weight: 700;
-  text-align: left;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--accent);
-}
+.entry-content th,
 .entry-content td {
   padding: 0.75rem 1rem;
   border: 1px solid var(--border);
+  text-align: left;
+}
+.entry-content th {
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 700;
 }
 .entry-content td:first-child {
   font-weight: 700;
   background: var(--surface);
   white-space: nowrap;
-}
-.entry-content tbody tr:nth-child(even) td:not(:first-child) {
-  background: var(--surface);
 }
 .entry-content strong { font-weight: 700; }
 .entry-content a {
