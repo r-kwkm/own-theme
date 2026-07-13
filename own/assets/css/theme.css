@@ -1038,6 +1038,7 @@ a.service-card:hover .service-name { color: var(--accent-dark); }
 
 .blog-thumb {
   aspect-ratio: 1200 / 630;
+  max-height: 230px;
   background: var(--surface);
   overflow: hidden;
   display: flex;

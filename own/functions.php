@@ -5,7 +5,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'OWN_VERSION', '2.3.12' );
+define( 'OWN_VERSION', '2.3.13' );
 define( 'OWN_DIR', get_template_directory() );
 define( 'OWN_URI', get_template_directory_uri() );
 
