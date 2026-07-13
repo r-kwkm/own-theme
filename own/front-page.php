@@ -274,7 +274,7 @@ get_header(); ?>
       <div>
         <p class="section-num">— 05 / Blog</p>
         <p class="section-en">Latest Insights</p>
-        <h2 class="section-ja" style="margin-bottom:0;">最新のブログ記事</h2>
+        <h2 class="section-ja" style="margin-bottom:0;">最新のコラム記事</h2>
       </div>
       <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="section-link">
         すべて見る
