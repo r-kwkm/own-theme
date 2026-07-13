@@ -3415,3 +3415,16 @@ a.work-card__tag:hover { background: var(--accent); color: var(--white); }
   .works-grid { grid-template-columns: 1fr; gap: 1.5rem; }
 }
 
+/* ============================================================
+   Hero — 大画面（フルスクリーン等）でのバランス調整
+   モバイル・タブレットの表示には影響しない
+   ============================================================ */
+@media (min-width: 1600px) {
+  .hero-left {
+    padding-left: 8rem;
+    padding-right: 4rem;
+  }
+  .hero-title { font-size: clamp(3.5rem, 4vw, 4.5rem); }
+  .hero-desc { font-size: 1.15rem; max-width: 560px; }
+}
+
