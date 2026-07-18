@@ -9,7 +9,9 @@ add_filter( 'pre_get_document_title', function() {
 } );
 
 add_action( 'wp_head', function() { ?>
+<?php if ( ! defined( 'RANK_MATH_VERSION' ) ) : ?>
 <meta name="description" content="鳥取でSEO設計込みのWordPressサイト制作ならown.。ターゲット設計から構築・公開後サポートまで一貫対応。まずは無料相談。">
+<?php endif; ?>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

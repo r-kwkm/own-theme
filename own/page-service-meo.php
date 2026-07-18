@@ -9,7 +9,9 @@ add_filter( 'pre_get_document_title', function() {
 } );
 
 add_action( 'wp_head', function() { ?>
+<?php if ( ! defined( 'RANK_MATH_VERSION' ) ) : ?>
 <meta name="description" content="鳥取のMEO対策はown.。Googleビジネスプロフィールの最適化から継続運用まで一貫対応。初期5万円〜、継続2〜3万円／月。まずは無料相談。">
+<?php endif; ?>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

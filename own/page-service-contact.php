@@ -9,7 +9,9 @@ add_filter( 'pre_get_document_title', function() {
 } );
 
 add_action( 'wp_head', function() { ?>
+<?php if ( ! defined( 'RANK_MATH_VERSION' ) ) : ?>
 <meta name="description" content="ホームページ制作・SEO・MEOのことで迷ったら、まずown.に相談してください。初回相談無料。オンライン・対面どちらも対応。鳥取。">
+<?php endif; ?>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

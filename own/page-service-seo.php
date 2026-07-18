@@ -9,7 +9,9 @@ add_filter( 'pre_get_document_title', function() {
 } );
 
 add_action( 'wp_head', function() { ?>
+<?php if ( ! defined( 'RANK_MATH_VERSION' ) ) : ?>
 <meta name="description" content="鳥取のSEO対策はown.。サイト診断・キーワード選定・内部対策・月次レポートまで一貫対応。5万円〜/月。まずは無料相談。">
+<?php endif; ?>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

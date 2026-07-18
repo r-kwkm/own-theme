@@ -9,7 +9,9 @@ add_filter( 'pre_get_document_title', function() {
 } );
 
 add_action( 'wp_head', function() { ?>
+<?php if ( ! defined( 'RANK_MATH_VERSION' ) ) : ?>
 <meta name="description" content="鳥取のSEOコンテンツ制作はown.。キーワード選定・構成・執筆・入稿まで一貫対応。3万円〜／本。まずは無料相談。">
+<?php endif; ?>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

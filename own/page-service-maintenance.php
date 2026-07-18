@@ -9,7 +9,9 @@ add_filter( 'pre_get_document_title', function() {
 } );
 
 add_action( 'wp_head', function() { ?>
+<?php if ( ! defined( 'RANK_MATH_VERSION' ) ) : ?>
 <meta name="description" content="鳥取のWordPress保守・運用サポートはown.。更新・バックアップ・セキュリティ・修正対応まで月3万円で丸ごとお任せ。まずは無料相談。">
+<?php endif; ?>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
