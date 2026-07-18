@@ -468,6 +468,27 @@ function own_register_meta_description_field(): void {
 }
 add_action( 'init', 'own_register_meta_description_field' );
 
+/* ============================================================
+   Rank Math SEOタイトル/ディスクリプションをREST API経由で編集可能にする
+   （固定ページの検索結果タイトル・説明文を管理表と同じワークフローで更新するため）
+   ============================================================ */
+function own_register_rank_math_meta_fields(): void {
+    if ( ! defined( 'RANK_MATH_VERSION' ) ) {
+        return;
+    }
+    foreach ( [ 'rank_math_title', 'rank_math_description' ] as $meta_key ) {
+        register_post_meta( 'page', $meta_key, [
+            'type'          => 'string',
+            'single'        => true,
+            'show_in_rest'  => true,
+            'auth_callback' => function() {
+                return current_user_can( 'edit_pages' );
+            },
+        ] );
+    }
+}
+add_action( 'init', 'own_register_rank_math_meta_fields' );
+
 function own_render_meta_description_box( WP_Post $post ): void {
     $value = get_post_meta( $post->ID, '_own_meta_description', true );
     wp_nonce_field( 'own_save_meta_description', 'own_meta_description_nonce' );
